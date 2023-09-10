@@ -1,0 +1,37 @@
+{
+    "common": {
+        "navigation": {
+            "languages": "Мови",
+            "projects": "Проекти",
+            "contact": "Контакт",
+            "common": "Загальне"
+        },
+        "main": {
+            "describtion": "Мене звуть Басалов Олексій, і це моє портфоліо",
+            "greeting": "Привіт"
+        },
+        "typing": {
+            "zero": "Я ",
+            "first": "фронтенд-розробник",
+            "second": "розробник на React",
+            "third": "розробник на Redux",
+            "fourth": "розробник на TypeScript"
+        },
+        "remote": {
+            "agree": "погоджуюсь",
+            "title": "віддалена робота"
+        },
+        "language": {
+            "title": "мови"
+        },
+        "projects": {
+            "link-to": "переглянути"
+        },
+        "contacts": {
+            "title": "контакти"
+        },
+        "button": {
+            "save": "зберегти"
+        }
+    }
+}

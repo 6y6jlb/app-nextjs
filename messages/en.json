@@ -1,0 +1,37 @@
+{
+    "common": {
+        "navigattion": {
+            "languages": "Languages",
+            "projects": "Projects",
+            "contact": "Contact",
+            "common": "Common"
+        },
+        "main": {
+            "describtion": "My name is Basalov Alexey and this is my portfolio",
+            "greeting": "Hello"
+        },
+        "typing": {
+            "zero": "I,m ",
+            "first": " frontend developer",
+            "second": " react developer",
+            "third": " redux developer",
+            "fourth": " typescript developer"
+        },
+        "remote": {
+            "agree": "agree",
+            "title": "remote job"
+        },
+        "language": {
+            "title": "languages"
+        },
+        "projects": {
+            "link-to": "view"
+        },
+        "contacts": {
+            "title": "contacts"
+        },
+        "button": {
+            "save": "save"
+        }
+    }
+}

@@ -1,0 +1,37 @@
+{
+  "common": {
+    "navigation": {
+        "languages": "Языки",
+        "projects": "Проекты",
+        "contact": "Контакт",
+        "common": "Общее"
+    },
+    "main": {
+        "describtion": "Меня зовут Басалов Алексей, и это мое портфолио",
+        "greeting": "Привет"
+    },
+    "typing": {
+        "zero": "Я ",
+        "first": "фронтенд-разработчик",
+        "second": "разработчик на React",
+        "third": "разработчик на Redux",
+        "fourth": "разработчик на TypeScript"
+    },
+    "remote": {
+        "agree": "согласен",
+        "title": "удаленная работа"
+    },
+    "language": {
+        "title": "языки"
+    },
+    "projects": {
+        "link-to": "просмотр"
+    },
+    "contacts": {
+        "title": "контакты"
+    },
+    "button": {
+        "save": "сохранить"
+    }
+  }
+}
