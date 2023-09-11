@@ -1,8 +1,10 @@
 'use client';
 import React from "react"
 import style from "./Navigation.module.css"
+import Link from 'next/link'
 
-import { useTranslations } from 'next-intl';
+import { useTranslations, } from 'next-intl';
+import LanguageSwitcher from "../languageSwitcher/LanguageSwitcher";
 
 
 const Navigation = () => {
@@ -10,10 +12,11 @@ const Navigation = () => {
 
 	return (
 		<div className={style.navigation}>
-			<a className="link" href="#common">{t('navigation.common')}</a>
-			<a className="link" href="#languages">{t('navigation.languages')}</a>
-			<a className="link" href="#projects">{t('navigation.projects')}</a>
-			<a className="link" href="#contact">{t('navigation.contact')}</a>
+			<Link href="#common">{t('navigation.common')}</Link>
+			<Link href="#languages">{t('navigation.languages')}</Link>
+			<Link href="#projects">{t('navigation.projects')}</Link>
+			<Link href="#contact">{t('navigation.contact')}</Link>
+			<LanguageSwitcher/>
 		</div>
 	)
 }
