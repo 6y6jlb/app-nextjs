@@ -1,16 +1,15 @@
 'use client';
 import { LANGUAGE_OPTIONS } from "@/config/language";
+import { Dropdown } from "flowbite-react";
 import { useLocale } from 'next-intl';
 import Link from 'next/link';
-import { Dropdown } from "flowbite-react";
-import styles from "./LanguageSwitcher.module.css"
 
 const LanguageSwitcher = () => {
 	const locale = useLocale()
 
 	const options = LANGUAGE_OPTIONS.filter(el => el.code !== locale).map((language, i) => {
 		return (
-			<Dropdown.Item key={language.code} className="option">
+			<Dropdown.Item key={language.code} className="text-xl">
 				<Link href={`/${language.code}`} locale={false}>
 					{language.name}
 				</Link>
@@ -20,7 +19,7 @@ const LanguageSwitcher = () => {
 	})
 
 	return (
-		<Dropdown color="none" label={LANGUAGE_OPTIONS.find(el=>el.code === locale)?.name} className="">
+		<Dropdown inline color="none" label={LANGUAGE_OPTIONS.find(el=>el.code === locale)?.name} className="px-4 rounded-lg">
 			{options}
 		</Dropdown>
 	)
