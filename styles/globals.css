@@ -17,3 +17,21 @@ body {
   color: var(--text-main-white);
   background: var(--background-main-black);
 }
+
+.face {
+  position: absolute;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url(../assets/images/face.png);
+}
+
+.main-container {
+  margin: 0 auto;
+    width: 80%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}

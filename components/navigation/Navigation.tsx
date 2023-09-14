@@ -14,7 +14,7 @@ const Navigation = () => {
 	const links = LINKKS.map(el => {
 		return (
 			<Link
-				className={window.location.hash.includes(el.id) ? style.active : ''}
+				className={window?.location.hash.includes(el.id) ? style.active : ''}
 				href={`#${el.id}`}
 				key={el.id}
 			>
@@ -24,7 +24,7 @@ const Navigation = () => {
 	})
 
 	return (
-		<div className={style.navigation}>
+		<div className={`w-full flex justify-between p-6 backdrop-sepia-0 bg-white/30 ${style.navigation}`}>
 			{links}
 			<LanguageSwitcher />
 		</div>
