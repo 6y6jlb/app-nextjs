@@ -1,7 +1,9 @@
 :root {
   --text-main-white: #dcdcdc;
+  --text-main-black: #222223;
   --text-main-active: #3BA3D0;
   --background-main-black: #222223;
+  --background-main-white: #dcdcdc;
   --background-transparent-white: rgba(250, 250, 229, 0.13);
 }
 
@@ -15,7 +17,18 @@ body {
   background: var(--background-main-black);
 }
 
+select {
+  background-color: transparent;
+}
+
+option {
+  background-color: var(--background-main-black);
+  border: none
+}
+
+
 a,
+select,
 .link {
   cursor: pointer;
   text-transform: uppercase;
@@ -31,15 +44,6 @@ a,
   }
 }
 
-.face {
-  position: absolute;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-image: url(../assets/images/face.png);
-  width: 100vw;
-}
-
 .main-container {
   margin: 0 auto;
   width: 80%;
@@ -53,4 +57,41 @@ a,
 .active {
   text-decoration: var(--text-main-active);
   color: var(--text-main-active);
+}
+
+.title-white {
+  text-transform: uppercase;
+  color: var(--text-main-white);
+  position: relative;
+  margin-bottom: 30px;
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%,50%);
+    width: 50px;
+    height: 2px;
+    background-color: var(--text-main-white);
+  }
+
+
+
+}
+
+.title-black {
+  text-transform: uppercase;
+  position: relative;
+  margin-bottom: 30px;
+  color: var(--text-main-black);
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%,50%);
+    width: 50px;
+    height: 2px;
+    background-color:  var(--text-main-black);
+  }
 }

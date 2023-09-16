@@ -1,6 +1,6 @@
 
 
-.lang {
+.select {
 	display: flex;
 	flex-direction: column;
 	align-self: center;
@@ -11,12 +11,12 @@
 }
 
 
-.item {
+.option {
 	width: 40px;
 	height: 40px;
 }
 
-.lang,.item,.lang:hover,.item:hover,.lang:focus,.item:focus,.lang:focus-visible,.item:focus-visible {
+.select,.item,.select:hover,.option:hover,.select:focus,.option:focus,.select:focus-visible,.option:focus-visible {
 	border: none;
 	outline: none
 }

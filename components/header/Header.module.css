@@ -10,8 +10,8 @@
     background-color: var(--background-transparent-white);
     padding: 20px 0;
 
-    @media screen and(min-width:400px) {
-        opacity: 100;
 
+    @media screen and (max-width: 480px) {
+        background-color: transparent;
     }
 }

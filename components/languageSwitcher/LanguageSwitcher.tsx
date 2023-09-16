@@ -14,7 +14,7 @@ const LanguageSwitcher = () => {
 				disabled={isDisabled}
 				key={i}
 				value={language.code}
-				className={`${style.item} ${isDisabled && 'active'}`}
+				className={`${style.option} ${isDisabled ? 'active' : ''}`}
 			>
 				{language.name}
 			</option>
@@ -27,7 +27,7 @@ const LanguageSwitcher = () => {
 			onChange={(e) => {
 				location.assign('/' + e.currentTarget.value)
 			}}
-			className={style.lang}
+			className={style.select}
 		>
 			{options}
 		</select>

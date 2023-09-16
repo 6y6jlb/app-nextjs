@@ -1,0 +1,14 @@
+.block {
+  background-color: var(--background-main-white);
+  padding: 40px 0;
+
+  .container {
+    height: 100%;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+
+  }
+}
+
+
