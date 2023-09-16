@@ -25,7 +25,7 @@ const BurgerNavigation = () => {
 	})
 
 	return (
-		<div className={`md:hidden block ${style.burgerNavigation}`}>
+		<div className={style.burgerNavigation}>
 			<div onClick={() => setIsOpen(!isOpen)} className={style.burgerButton}>
 				<FontAwesomeIcon style={{ fontSize: "28px", color: isOpen ? "grey" : "white" }} icon={faBars} />
 			</div>

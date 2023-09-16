@@ -7,6 +7,8 @@
     opacity: 0.95;
     left: 0;
     right: 0;
+    background-color: var(--background-transparent-white);
+    padding: 20px 0;
 
     @media screen and(min-width:400px) {
         opacity: 100;

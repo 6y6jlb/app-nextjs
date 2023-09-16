@@ -1,14 +1,15 @@
+import style from "./Main.module.css"
 
 const Main = () => {
-    return (
-        <div className="h-screen face" >
-            <div id="common" className="main-container">
-            </div>
-        </div>
 
 
-    )
+	return (
+		<div id={"common"}  className={style.main}>
+			<div className={`main-container ${style.container}`}>
+		
+			</div>
+			
+		</div>
+	)
 }
-
-
 export default Main

@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { useTranslations, } from 'next-intl';
 import LanguageSwitcher from "../languageSwitcher/LanguageSwitcher";
 import { LINKKS } from "@/config/navigation";
+import style from "./Navigation.module.css"
 
 
 
@@ -27,7 +28,7 @@ const Navigation = () => {
 	})
 
 	return (
-		<div className={`hidden md:flex w-full flex justify-between p-6 backdrop-sepia-0 bg-white/30`}>
+		<div className={style.navigation}>
 			{links}
 			<LanguageSwitcher />
 		</div>
