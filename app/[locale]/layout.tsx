@@ -5,6 +5,8 @@ import { NextIntlClientProvider } from 'next-intl';
 import { notFound } from 'next/navigation';
 import { LOCALES } from '../../messages/index';
 import Header from '@/components/header/Header';
+import "@fortawesome/fontawesome-svg-core/styles.css";
+
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -17,7 +19,7 @@ export default async function RootLayout({
   children, params: { locale }
 }: {
   children: React.ReactNode
-  params: {locale:string}
+  params: { locale: string }
 }) {
   let messages;
   try {
@@ -29,9 +31,9 @@ export default async function RootLayout({
   }
   return (
     <html lang={process.env.DEFAULT_LANGUAGE}>
-      <body className={inter.className}>
+      <body className={`${inter.className}`}>
         <NextIntlClientProvider locale={locale} messages={messages}>
-        <Header/>
+          <Header />
           {children}
         </NextIntlClientProvider>
       </body>

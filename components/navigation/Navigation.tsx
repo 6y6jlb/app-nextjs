@@ -1,6 +1,5 @@
 'use client';
 import React from "react"
-import style from "./Navigation.module.css"
 import Link from 'next/link'
 import { useTranslations, } from 'next-intl';
 import LanguageSwitcher from "../languageSwitcher/LanguageSwitcher";
@@ -11,10 +10,14 @@ import { LINKKS } from "@/config/navigation";
 const Navigation = () => {
 	const t = useTranslations("common");
 
+	if (!window) {
+		return
+	}
+
 	const links = LINKKS.map(el => {
 		return (
 			<Link
-				className={window?.location.hash.includes(el.id) ? style.active : ''}
+				className={window.location.hash.includes(el.id) ? 'active' : ''}
 				href={`#${el.id}`}
 				key={el.id}
 			>
@@ -24,7 +27,7 @@ const Navigation = () => {
 	})
 
 	return (
-		<div className={`w-full flex justify-between p-6 backdrop-sepia-0 bg-white/30 ${style.navigation}`}>
+		<div className={`hidden md:flex w-full flex justify-between p-6 backdrop-sepia-0 bg-white/30`}>
 			{links}
 			<LanguageSwitcher />
 		</div>

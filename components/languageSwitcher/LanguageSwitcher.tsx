@@ -9,17 +9,16 @@ const LanguageSwitcher = () => {
 
 	const options = LANGUAGE_OPTIONS.filter(el => el.code !== locale).map((language, i) => {
 		return (
-			<Dropdown.Item key={language.code} className="text-xl">
-				<Link href={`/${language.code}`} locale={false}>
-					{language.name}
-				</Link>
+			// @ts-ignore
+			<Dropdown.Item key={language.code} as={Link} href={`/${language.code}`} locale={false} className="text-xl text-white-main focus:bg-transparent hover:bg-transparent" >
+				{language.name}
 			</Dropdown.Item>
 
 		)
 	})
 
 	return (
-		<Dropdown inline color="none" label={LANGUAGE_OPTIONS.find(el=>el.code === locale)?.name} className="px-4 rounded-lg">
+		<Dropdown color="none" label={<button className="link">{LANGUAGE_OPTIONS.find(el=>el.code === locale)?.name}</button>} className="px-4 rounded-lg bg-white/30">
 			{options}
 		</Dropdown>
 	)
