@@ -1,0 +1,26 @@
+
+.projectsBlock {
+  height: max-content;
+  padding: 40px 0;
+
+  .container {
+    height: 100%;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+
+
+    .projects {
+      width: 100%;
+      height: max-content;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+
+
+    }
+  }
+
+}
+

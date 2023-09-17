@@ -27,7 +27,7 @@
    }
    .burgerButton {
       color: #1a1d1f;
-      z-index: 100497;
+      z-index: 999;
       width: 30px;
       position: absolute;
       top: 10px;

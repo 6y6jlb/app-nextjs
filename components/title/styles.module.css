@@ -1,0 +1,17 @@
+.title {
+    text-transform: uppercase;
+    color: var(--text-main-white);
+    position: relative;
+    margin-bottom: 30px;
+  }
+
+  .title::before {
+    content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translate(-50%,50%);
+      width: 50px;
+      height: 2px;
+      background-color: var(--text-main-white);
+  }

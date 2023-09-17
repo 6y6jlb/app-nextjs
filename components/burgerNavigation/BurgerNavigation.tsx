@@ -4,7 +4,7 @@ import { faBars } from "@fortawesome/free-solid-svg-icons/faBars"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { useTranslations } from "next-intl"
 import { useState } from "react"
-import style from "./BurgerNavigation.module.css"
+import style from "./styles.module.css"
 import Link from "next/link"
 import LanguageSwitcher from "../languageSwitcher/LanguageSwitcher"
 

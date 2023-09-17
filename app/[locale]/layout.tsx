@@ -6,6 +6,7 @@ import { notFound } from 'next/navigation';
 import { LOCALES } from '../../messages/index';
 import Header from '@/components/header/Header';
 import "@fortawesome/fontawesome-svg-core/styles.css";
+import Footer from '@/components/footer/Footer';
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -35,6 +36,7 @@ export default async function RootLayout({
         <NextIntlClientProvider locale={locale} messages={messages}>
           <Header />
           {children}
+          <Footer/>
         </NextIntlClientProvider>
       </body>
     </html>

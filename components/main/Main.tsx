@@ -1,4 +1,4 @@
-import style from "./Main.module.css"
+import style from "./styles.module.css"
 
 const Main = () => {
 

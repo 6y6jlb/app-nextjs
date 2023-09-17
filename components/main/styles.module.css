@@ -1,7 +1,6 @@
 .main {
   min-height: 100vh;
   height: 1000px;
-  background-color: var(--background-main-black);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;

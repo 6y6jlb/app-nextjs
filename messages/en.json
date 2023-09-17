@@ -25,6 +25,7 @@
             "title": "languages"
         },
         "projects": {
+            "title": "Projects",
             "link-to": "view"
         },
         "contacts": {

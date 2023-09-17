@@ -1,0 +1,40 @@
+.remoteJobBlock {
+  width: 100%;
+  padding: 40px 0;
+
+  .container {
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
+    .insideWrapper {
+      min-width: 400px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+      @media screen and (max-width: 600px) {
+        min-width: 350px;
+      }
+
+      @media screen and (max-width: 450px) {
+        min-width: 260px;
+      }
+
+      .askToDeploy {
+        background-color: #a8adb4;
+      }
+
+      .description {
+
+      }
+    }
+  }
+}
+
+
+
+
+
+
+

@@ -1,5 +1,5 @@
 import React from "react"
-import style from "./Header.module.css"
+import style from "./styles.module.css"
 import Navigation from "../navigation/Navigation"
 import BurgerNavigation from "../burgerNavigation/BurgerNavigation"
 

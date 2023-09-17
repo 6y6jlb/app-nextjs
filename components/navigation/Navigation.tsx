@@ -1,10 +1,10 @@
-'use client';
+'use client'
 import React from "react"
 import Link from 'next/link'
 import { useTranslations, } from 'next-intl';
 import LanguageSwitcher from "../languageSwitcher/LanguageSwitcher";
 import { LINKKS } from "@/config/navigation";
-import style from "./Navigation.module.css"
+import style from "./styles.module.css"
 
 
 

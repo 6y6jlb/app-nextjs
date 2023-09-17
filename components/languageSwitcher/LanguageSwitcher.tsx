@@ -1,7 +1,7 @@
 'use client';
 import { LANGUAGE_OPTIONS } from "@/config/language";
 import { useLocale } from 'next-intl';
-import style from "./LanguageSwitcher.module.css"
+import style from "./styles.module.css"
 import { ReactNode } from "react";
 
 const LanguageSwitcher = () => {
