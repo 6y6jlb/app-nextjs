@@ -3,22 +3,12 @@
 }
 
 .main > div:nth-child(2n) {
+  color: var(--text-main-white);
   background-color: var(--background-main-black);
-  div.dynamic-title-color {
-    color: var(--text-main-white);
-  }
-  div.dynamic-title-color::before {
-    background-color: var(--text-main-white);
-  }
 }
 
 
 .main > div:nth-child(2n+1) {
+  color: var(--text-main-black);
   background-color: var(--background-main-white);
-  div.dynamic-title-color {
-    color: var(--text-main-black);
-  }
-  div.dynamic-title-color::before {
-    background-color: var(--text-main-black);
-  }
 }
