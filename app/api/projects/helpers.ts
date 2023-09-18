@@ -7,6 +7,7 @@ const fetchRepos = async () => {
             next: { revalidate: 1800 },
         })
 
+        console.log('Repos fetched')
         return await reposResponse.json()
     } catch (error) {
         console.dir(error)
@@ -31,7 +32,7 @@ const updateRepos = async (repos: any) => {
             if (error) {
                 console.warn(error.message);
             } else {
-                console.log('Rate was writed successfully.');
+                console.log('Was writed successfully.');
             }
         });
     } catch (error) {
@@ -45,23 +46,22 @@ export const getRepos = async () => {
     try {
         const savedReposString = await fs.promises.readFile('storage/repos.json', 'utf-8');
         result = await JSON.parse(savedReposString.toString())
-        console.log(result)
-        if (!result.timestamp || moment().diff(moment.unix(result.timestamp), 'days') >= 2) {
+        if (!result.timestamp || moment(result.timestamp)?.diff(moment(), 'days') >= 2) {
             const newRepos = await fetchRepos();
 
             for (let id = 0; id < newRepos.length; id++) {
                 const repo = newRepos[id]
-                result.data[repo.name] = {...repo, lang_data: await fetchRepoLang(repo.name)}
+                result.data[repo.name] = { ...repo, lang_data: await fetchRepoLang(repo.name) }
 
             }
+            console.log('Languages fetched')
             result.timestamp = moment();
-
-            updateRepos(result)
+            await Promise.resolve(updateRepos({ ...result, timestamp: moment() }))
 
 
         }
     } catch (error) {
-        await Promise.resolve(updateRepos({ timestamp: null }))
+        await Promise.resolve(updateRepos({ timestamp: moment() }))
         result = await getRepos()
     }
     return result
