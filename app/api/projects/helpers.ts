@@ -44,9 +44,13 @@ const updateRepos = async (repos: any) => {
 export const getRepos = async () => {
     let result: any;
     try {
+
         const savedReposString = await fs.promises.readFile('storage/repos.json', 'utf-8');
         result = await JSON.parse(savedReposString.toString())
-        if (!result.timestamp || moment(result.timestamp)?.diff(moment(), 'days') >= 2) {
+
+        if (!result.timestamp || Math.abs(moment(result.timestamp)?.diff(moment(), 'days')) >= 2) {
+            result.timestamp = moment()
+            result.data = {}
             const newRepos = await fetchRepos();
 
             for (let id = 0; id < newRepos.length; id++) {
@@ -55,13 +59,14 @@ export const getRepos = async () => {
 
             }
             console.log('Languages fetched')
-            result.timestamp = moment();
-            await Promise.resolve(updateRepos({ ...result, timestamp: moment() }))
+
+            await Promise.resolve(updateRepos(result))
 
 
         }
     } catch (error) {
-        await Promise.resolve(updateRepos({ timestamp: moment() }))
+        result = { timestamp: moment().subtract(3, 'days') };
+        await Promise.resolve(updateRepos(result))
         result = await getRepos()
     }
     return result

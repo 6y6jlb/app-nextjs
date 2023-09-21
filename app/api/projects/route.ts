@@ -1,12 +1,13 @@
 import { NextResponse } from 'next/server';
 import { getRepos } from './helpers';
 
-export async function GET(request: Request) {
+export async function GET(request: Request,) {
 
   try {
     return NextResponse.json(await getRepos())
-  } catch (error) {
+  } catch (error:any) {
     console.dir(error)
+    return NextResponse.json(error.message)
   }
 
 
