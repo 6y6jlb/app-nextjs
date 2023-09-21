@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { getRepos } from './helpers';
+import { getRepos } from '../../../service/repos';
 
 export async function GET(request: Request,) {
 

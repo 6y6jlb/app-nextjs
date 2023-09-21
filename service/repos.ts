@@ -44,7 +44,6 @@ const updateRepos = async (repos: any) => {
 export const getRepos = async () => {
     let result: any;
     try {
-
         const savedReposString = await fs.promises.readFile('storage/repos.json', 'utf-8');
         result = await JSON.parse(savedReposString.toString())
 
