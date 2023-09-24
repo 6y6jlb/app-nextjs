@@ -1,19 +1,17 @@
 
+
 .project {
   width: 300px;
   margin: 5px;
   position: relative;
-
-
-
 
   .button {
     position: absolute;
     z-index: 1;
     text-transform: lowercase;
     top: 30%;
-    left:40%;
-
+    left:35%;
+    color: var(--text-main-white)
 
 
 
@@ -29,19 +27,18 @@
     background-repeat: no-repeat;
     transition: all 0.7s ease-out;
     filter: blur(2px);
+  }
 
-
-
-    /* &:before {
-      content: '';
-      opacity: 0.7;
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      transition: all 0.6s ease-out;
-    } */
+  .image:before {
+    content: '';
+    background-color: var(--background-main-black);
+    opacity: 0.7;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: all 0.6s ease-out;
   }
 
 
@@ -65,6 +62,30 @@
   }
 
 }
+
+.image.empty {
+  background-image: url(../../assets/images/empty.jpg);
+}
+
+.image.sn {
+  background-image: url(../../assets/images/sn.jpg);
+}
+
+
+.image.to-do {
+  background-image: url(../../assets/images/to-do.jpg);
+}
+
+
+.image.counter {
+  background-image: url(../../assets/images/counter.jpg);
+}
+
+
+.image.portfolio {
+  background-image: url(../../assets/images/portfolio.jpg);
+}
+
 
 
 

@@ -1,113 +1,46 @@
-
-.contactsBlock {
+.container {
   width: 100%;
-  padding: 40px 0;
-  text-align: center;
+  min-height: 150px;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
 
-  .container {
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
-    z-index: 1;
-    .modal {
-      z-index: 10;
-      position: absolute;
-      top: 45%;
-      display: flex;
-
-
-
-      .modalText {
-        z-index: 10;
-        width: 150px;
-        height: 50px;
-        display: flex;
-        text-transform: uppercase;
-        justify-content: center;
-        align-items: center;
-
-
-
-      }
-      /* &:before {
-        z-index: -1;
-        content: '';
-        position: fixed;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        right: 0;
-        opacity: 0.5;
-
-      } */
-    }
-
-
-    .title {
-      width: 150px;
-    }
-
-    .form {
-      box-sizing: content-box;
-      padding: 2px;
-      width: 400px;
-      height: 300px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      align-items: stretch;
-      
-      .padding {
-        padding: 6px 12px;
-      }
-
-      .rounded {
-        border-radius: 2px;
-      }
-
-      .button {
-        border: none;
-        text-transform: uppercase;
-        display: flex;
-        justify-content: center;
-        cursor: pointer;
-      }
-
-      .buttonActive {
-        color: #686f74;
-
-      }
-
-
-      @media screen and (max-width: 600px) {
-        width: 350px;
-      }
-      @media screen and (max-width: 450px) {
-        width: 260px;
-      }
-
-
-      .textArea {
-        border: none;
-        height: 130px;
-
-        resize: none;
-      }
-
-
-    }
-
-
+  .master {
+    margin-bottom: 30px;
+    text-transform: uppercase;
   }
 
+  .insideContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 50px;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+
+    @media screen and (max-width: 992px) {
+      gap: 4px;
+  }
+
+    .first {
+      width: 50px;
+      height: 50px;
+    }
+
+    .second {
+      width: 50px;
+      height: 50px;
+      font-size: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: all 0.3s ease-out;
+    }
+
+    .active {
+      font-size: 35px;
+      transition: all 0.2s ease-out;
+    }
+
+  }
 }
-
-
-
-
-
-

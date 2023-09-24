@@ -1,5 +1,6 @@
 import fs from 'fs';
 import moment from 'moment';
+import { Repos } from './types';
 
 const fetchRepos = async () => {
     try {
@@ -41,7 +42,7 @@ const updateRepos = async (repos: any) => {
 }
 
 
-export const getRepos = async () => {
+export const getRepos = async (): Promise<Repos> => {
     let result: any;
     try {
         const savedReposString = await fs.promises.readFile('storage/repos.json', 'utf-8');
@@ -70,3 +71,4 @@ export const getRepos = async () => {
     }
     return result
 }
+

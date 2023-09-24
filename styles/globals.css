@@ -35,7 +35,7 @@ select,
   font-size: 1em;
   text-align: center;
   font-weight: 600;
-  color: var(--text-main-white);
+  color: var(--text-main-black);
 
   &:hover {
     text-decoration: var(--text-main-active);

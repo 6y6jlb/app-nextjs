@@ -1,34 +1,28 @@
 'use client'
-import { useEffect, useState } from "react"
-import Title from "../title/Title"
-import style from "./styles.module.css"
+import { useState } from "react"
 import { Audio } from "react-loader-spinner"
 import ProjectItem from "../projectItem/ProjectItem"
+import Title from "../title/Title"
+import style from "./styles.module.css"
+import { ReposData } from "@/service/types"
 
-const Projects = () => {
-	const [active, setActive] = useState(false)
-	const projects = {} as any
+export default function Projects({ projects }: IProps) {
+	const [activeRepoName, setActiveRepoName] = useState('')
 
-	// useEffect(() => {
-	// 	projects.fetch()
-	// }, [])
-
-	const onFocusChange = (active: boolean) => {
-		setActive(active)
-	}
 
 	const mappedProjects = [
-		projects.data &&
-		projects.data.map((project: any, index: number) => (
-			<ProjectItem key={index} active={active} setActive={onFocusChange} project={project} />
+		projects &&
+		Object.values(projects).map((project: any, index: number) => (
+			<ProjectItem key={index} activeRepoName={activeRepoName} setActiveRepoName={setActiveRepoName} project={project} />
 		)),
 	]
+
 
 	return (
 		<div id={"projects"} className={style.projectsBlock}>
 			<div className={`main-container ${style.container}`}>
 				<Title title-key='projects.title' />
-				{projects.loaded ? (
+				{mappedProjects.length ? (
 					<div className={style.projects}>{mappedProjects}</div>
 				) : (
 					<Audio
@@ -43,4 +37,7 @@ const Projects = () => {
 	)
 }
 
-export default Projects
+interface IProps {
+	projects: ReposData
+}
+

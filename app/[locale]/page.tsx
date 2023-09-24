@@ -3,16 +3,20 @@ import Languages from "@/components/languages/Languages";
 import Main from "@/components/main/Main";
 import Projects from "@/components/projects/Projects";
 import RemoteJob from "@/components/remoteJob/RemoteJob";
-import style from "./styles.module.css"
+import { takeLanguages } from "@/service/lang";
+import { getRepos } from "@/service/repos";
+import style from "./styles.module.css";
 
-export default function Home() {
+export default async function Page() {
+
+  const repos = await getRepos()
   return (
     <main className={style.main}>
       <Main />
-      <Languages />
-      <Projects />
-      <RemoteJob/>
-      <Contacts/>
+      <Languages languages={takeLanguages(repos.data)} />
+      <Projects projects={repos.data}/>
+      <RemoteJob />
+      <Contacts  master={process.env.OWNER_FIRST_NAME  +' '+ process.env.OWNER_LAST_NAME}/>
     </main>
   )
 }

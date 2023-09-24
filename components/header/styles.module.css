@@ -4,10 +4,9 @@
     align-items: center;
     position: fixed;
     z-index: 100500;
-    opacity: 0.95;
     left: 0;
     right: 0;
-    background-color: var(--background-transparent-white);
+    background-color: var(--background-main-white);
     padding: 20px 0;
 
 

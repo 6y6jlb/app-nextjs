@@ -12,7 +12,7 @@ import Footer from '@/components/footer/Footer';
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: "PORTFOLIO OF " + process.env.OWNER_FIRST_NAME?.toUpperCase() + ' ' + process.env.OWNER_LAST_NAME?.toUpperCase(),
+  title: `PORTFOLIO OF ${process.env.OWNER_FIRST_NAME} ${process.env.OWNER_LAST_NAME}`.toUpperCase(),
   description: 'web developer',
 }
 
@@ -30,6 +30,7 @@ export default async function RootLayout({
 
     notFound();
   }
+
   return (
     <html lang={process.env.DEFAULT_LANGUAGE}>
       <body className={`${inter.className}`}>

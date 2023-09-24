@@ -1,4 +1,8 @@
+import { ReposData } from './types'
 
-export const takeLanguages = (reposData: object) => {
-    return Object.values(reposData).map((el: any) => el.lang_data ?? [])
+
+export const takeLanguages = (repos: ReposData): TakeLanguages => {
+    return Object.values(repos).map((el) => el.lang_data ?? [])
 }
+
+export type TakeLanguages = number[]

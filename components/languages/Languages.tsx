@@ -1,29 +1,16 @@
 'use client'
+import { TakeLanguages } from "@/service/lang"
 import Chart from "react-apexcharts"
 import { Audio, } from "react-loader-spinner"
-import style from "./styles.module.css"
-import chartOptions from "./chart"
+import { getChartData } from '../../service/chart'
 import Title from "../title/Title"
-import { getChartData } from '../../service/chart';
-import { useEffect, useState } from "react"
-import { takeLanguages } from "@/service/lang"
-
-export default function Languages() {
-	const [chartData, setChartData] = useState([]);
+import chartOptions from "./chart"
+import style from "./styles.module.css"
 
 
-	useEffect(() => {
-		fetch('/api/projects')
-		  .then((response) => response.json())
-		  .then((result) => {
-			setChartData(getChartData(takeLanguages(result.data)));
-		  })
-		  .catch((error) => {
-			console.error('Error fetching data:', error);
-		  });
-	  }, []);
+export default function Languages({languages}: IProps) {
  
-	
+	const chartData = getChartData(languages)
 
 	return (
 		<div id={"languages"} className={style.block}>
@@ -49,4 +36,8 @@ export default function Languages() {
 			</div>
 		</div>
 	)
+}
+
+interface IProps {
+	languages: TakeLanguages
 }
