@@ -1,53 +1,56 @@
-
-
 .project {
   width: 300px;
   margin: 5px;
-  position: relative;
 
-  .button {
-    position: absolute;
-    z-index: 1;
-    text-transform: lowercase;
-    top: 30%;
-    left:35%;
-    color: var(--text-main-white)
-
-
-
-  }
-  .image {
-    width: 100%;
-    height: 250px;
+  .imageBlock {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-size: cover;
+    width: 100%;
+    height: 250px;
     position: relative;
-    background-repeat: no-repeat;
-    transition: all 0.7s ease-out;
-    filter: blur(2px);
+
+    .button {
+      z-index: 1;
+      text-transform: lowercase;
+      top: 30%;
+      left: 35%;
+      color: var(--text-main-white)
+    }
+
+    .image {
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-size: cover;
+      position: absolute;
+      background-repeat: no-repeat;
+      transition: all 0.7s ease-out;
+      filter: blur(2px);
+    }
+
+    .image:before {
+      content: '';
+      background-color: var(--background-main-black);
+      opacity: 0.7;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      transition: all 0.6s ease-out;
+    }
+
+
+    .active {
+      transition: all 0.3s ease-out;
+      transform: scale(1.1, 1);
+      filter: blur(0px);
+
+    }
   }
 
-  .image:before {
-    content: '';
-    background-color: var(--background-main-black);
-    opacity: 0.7;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    transition: all 0.6s ease-out;
-  }
-
-
-  .active {
-    transition: all 0.3s ease-out;
-    transform: scale(1.1,1);
-    filter: blur(0px);
-
-  }
 
 
   .descriptionBlock {
@@ -64,28 +67,24 @@
 }
 
 .image.empty {
-  background-image: url(../../assets/images/empty.jpg);
+  background-image: url(/assets/images/empty.jpg);
 }
 
 .image.sn {
-  background-image: url(../../assets/images/sn.jpg);
+  background-image: url(/assets/images/sn.jpg);
 }
 
 
 .image.to-do {
-  background-image: url(../../assets/images/to-do.jpg);
+  background-image: url(/assets/images/to-do.jpg);
 }
 
 
 .image.counter {
-  background-image: url(../../assets/images/counter.jpg);
+  background-image: url(/assets/images/counter.jpg);
 }
 
 
 .image.portfolio {
-  background-image: url(../../assets/images/portfolio.jpg);
+  background-image: url(/assets/images/portfolio.jpg);
 }
-
-
-
-
