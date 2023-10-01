@@ -5,11 +5,15 @@
   --background-main-black: #222223;
   --background-main-white: #dcdcdc;
   --background-transparent-white: rgba(250, 250, 229, 0.13);
+  --header-height: 50px;
+  --footer-height: 50px;
 }
 
+* {
+  box-sizing: border-box;
+}
 
 body {
-  box-sizing: border-box;
   padding: 0;
   margin: 0;
 

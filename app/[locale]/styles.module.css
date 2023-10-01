@@ -1,4 +1,5 @@
 .main {
+  padding-top: var(--header-height);
   text-align: start;
 }
 

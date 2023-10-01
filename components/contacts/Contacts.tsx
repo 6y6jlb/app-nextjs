@@ -23,6 +23,9 @@ export default function Footer ({master}: IProps)  {
 	return (
 		<div className={`main-container ${style.container}`}>
 			<Title title-key='contacts.title' />
+			<button onClick={(e) => {
+				location.assign('/feedback' + e.currentTarget.value)
+			}}>связаться на прямую</button>
 			<div className={style.master}>{master}</div>
 			<div className={style.insideContainer}>{mappedContacts}</div>
 		</div>

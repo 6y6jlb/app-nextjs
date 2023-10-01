@@ -12,7 +12,7 @@ export default function Projects({ projects }: IProps) {
 
 	const mappedProjects = [
 		projects &&
-		Object.values(projects).map((project: any, index: number) => (
+		Object.values(projects).filter(el=>!['a3f-group-test', '6y6jlb'].includes(el.name)).map((project: any, index: number) => (
 			<ProjectItem key={index} activeRepoName={activeRepoName} setActiveRepoName={setActiveRepoName} project={project} />
 		)),
 	]

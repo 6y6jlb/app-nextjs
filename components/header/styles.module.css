@@ -3,6 +3,7 @@
     justify-content: flex-end;
     align-items: center;
     position: fixed;
+    height: var(--header-height);
     z-index: 100500;
     left: 0;
     right: 0;

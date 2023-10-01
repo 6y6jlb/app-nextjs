@@ -19,7 +19,7 @@ const Navigation = () => {
 		return (
 			<Link
 				className={window.location.hash.includes(el.id) ? 'active' : ''}
-				href={`#${el.id}`}
+				href={`/#${el.id}`}
 				key={el.id}
 			>
 				{t(el.title)}
