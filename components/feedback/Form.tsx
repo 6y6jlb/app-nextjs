@@ -9,9 +9,14 @@ export default function FeedbackForm() {
         event.preventDefault()
 
         const formData = new FormData(event.currentTarget)
+
         const response = await fetch('/api/feedback', {
             method: 'POST',
-            body: formData,
+            body: JSON.stringify({
+                contacts: formData.get('contacts'),
+                name: formData.get('name'),
+                message: formData.get('message')
+            }),
         })
 
         // Handle response if necessary

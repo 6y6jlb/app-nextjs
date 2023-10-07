@@ -8,14 +8,22 @@ import style from "./styles.module.css"
 import Link from "next/link"
 import LanguageSwitcher from "../languageSwitcher/LanguageSwitcher"
 
-const BurgerNavigation = () => {
+export default function BurgerNavigation () {
+
 	const [isOpen, setIsOpen] = useState(false)
 	const t = useTranslations("common");
+	
+	let hash = '';
+
+	if (typeof window !== "undefined") {
+		hash = window.location.hash
+	 }
+
 
 	const links = LINKKS.map(el => {
 		return (
 			<Link
-				className={window?.location.hash.includes(el.id) ? 'active' : ''}
+				className={hash.includes(el.id) ? 'active' : ''}
 				href={`#${el.id}`}
 				key={el.id}
 			>
@@ -36,4 +44,3 @@ const BurgerNavigation = () => {
 		</div>
 	)
 }
-export default BurgerNavigation

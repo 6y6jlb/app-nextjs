@@ -1,16 +1,35 @@
 import { NextResponse } from 'next/server';
 
-export async function POST(request: Request,) {
-
+export async function POST(request: Request) {
   try {
-    const data = request.body
-    return NextResponse.json(data)
+    const { contacts, name, message }: FeedBackForm = await request.json()
+
+    const response = await fetch(process.env.DO_HOST_EXTERNAL + "/api/notification/email/send", {
+      method: "POST",
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        senderContacts: contacts,
+        senderName: name,
+        body: message,
+      }),
+
+    })
+
+    return NextResponse.json(response)
 
   } catch (error: any) {
-    
+
     console.dir(error)
     return NextResponse.json(error.message)
   }
 
+
+}
+
+
+interface FeedBackForm {
+  name: string;
+  contacts: string;
+  message: string
 
 }

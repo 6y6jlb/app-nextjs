@@ -1,5 +1,5 @@
 'use client'
-import React from "react"
+import React, { useState } from "react"
 import Link from 'next/link'
 import { useTranslations, } from 'next-intl';
 import LanguageSwitcher from "../languageSwitcher/LanguageSwitcher";
@@ -8,17 +8,20 @@ import style from "./styles.module.css"
 
 
 
-const Navigation = () => {
+export default function Navigation () {
+	
 	const t = useTranslations("common");
+	let hash = '';
 
-	if (!window) {
-		return
-	}
+	if (typeof window !== "undefined") {
+		hash = window.location.hash
+	 }
+
 
 	const links = LINKKS.map(el => {
 		return (
 			<Link
-				className={window.location.hash.includes(el.id) ? 'active' : ''}
+				className={hash.includes(el.id) ? 'active' : ''}
 				href={`/#${el.id}`}
 				key={el.id}
 			>
@@ -33,6 +36,4 @@ const Navigation = () => {
 			<LanguageSwitcher />
 		</div>
 	)
-}
-
-export default Navigation
+};
