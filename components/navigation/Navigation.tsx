@@ -3,22 +3,22 @@ import React, { useState } from "react"
 import Link from 'next/link'
 import { useTranslations, } from 'next-intl';
 import LanguageSwitcher from "../languageSwitcher/LanguageSwitcher";
-import { LINKKS } from "@/config/navigation";
+import { LINKS } from "@/config/navigation";
 import style from "./styles.module.css"
 
 
 
-export default function Navigation () {
-	
+export default function Navigation() {
+
 	const t = useTranslations("common");
 	let hash = '';
 
 	if (typeof window !== "undefined") {
 		hash = window.location.hash
-	 }
+	}
 
 
-	const links = LINKKS.map(el => {
+	const links = LINKS.map(el => {
 		return (
 			<Link
 				className={hash.includes(el.id) ? 'active' : ''}

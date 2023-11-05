@@ -1,5 +1,5 @@
 'use client'
-import { LINKKS } from "@/config/navigation"
+import { LINKS } from "@/config/navigation"
 import { faBars } from "@fortawesome/free-solid-svg-icons/faBars"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { useTranslations } from "next-intl"
@@ -8,19 +8,19 @@ import style from "./styles.module.css"
 import Link from "next/link"
 import LanguageSwitcher from "../languageSwitcher/LanguageSwitcher"
 
-export default function BurgerNavigation () {
+export default function BurgerNavigation() {
 
 	const [isOpen, setIsOpen] = useState(false)
 	const t = useTranslations("common");
-	
+
 	let hash = '';
 
 	if (typeof window !== "undefined") {
 		hash = window.location.hash
-	 }
+	}
 
 
-	const links = LINKKS.map(el => {
+	const links = LINKS.map(el => {
 		return (
 			<Link
 				className={hash.includes(el.id) ? 'active' : ''}
@@ -39,7 +39,7 @@ export default function BurgerNavigation () {
 			</div>
 			<div className={isOpen ? style.burgerNavItems : `${style.burgerNavItems} ${style.hide}`}>
 				{links}
-				<LanguageSwitcher/>
+				<LanguageSwitcher />
 			</div>
 		</div>
 	)

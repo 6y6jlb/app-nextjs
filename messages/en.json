@@ -33,7 +33,8 @@
         },
         "button": {
             "save": "save",
-            "send": "отправить"
+            "send": "send",
+            "contact-us": "contact us directly"
         }
     }
 }

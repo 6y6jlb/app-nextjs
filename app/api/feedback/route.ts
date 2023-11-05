@@ -4,7 +4,7 @@ export async function POST(request: Request) {
   try {
     const { contacts, name, message }: FeedBackForm = await request.json()
 
-    const response = await fetch(process.env.DO_HOST_EXTERNAL + "/api/notification/email/send", {
+    const response = await fetch(process.env.LBAS_HOST_EXTERNAL + "/api/notification/email/send", {
       method: "POST",
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -14,6 +14,7 @@ export async function POST(request: Request) {
       }),
 
     })
+
 
     return NextResponse.json(response)
 

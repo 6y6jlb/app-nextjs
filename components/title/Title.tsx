@@ -16,7 +16,8 @@ const Title = ({ 'title-key': titleKey}: ITitle) => {
 
   useEffect(() => {
     const current: any = divRef.current
-    if(current) {
+  
+    if(typeof window !== "undefined" && current) {
       const computedColor = window.getComputedStyle(current).color;
       current.style.setProperty('--parent-color',computedColor ?? 'transparent');
     }
