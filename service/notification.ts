@@ -8,7 +8,7 @@ export const sendNotification = async (formData: FeedBackForm) => {
             body: JSON.stringify({
                 senderContacts: formData.contacts,
                 senderName: formData.name,
-                message: formData.message
+                body: formData.message
             }),
         })
         return  await response.json()
