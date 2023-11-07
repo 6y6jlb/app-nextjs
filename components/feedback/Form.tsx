@@ -2,26 +2,24 @@
 import { useTranslations } from 'next-intl';
 import { FormEvent } from 'react';
 import style from "./styles.module.css";
+import { sendNotification } from '@/service/notification';
 
 export default function FeedbackForm() {
     const t = useTranslations("common");
+    
     async function onSubmit(event: FormEvent<HTMLFormElement>) {
         event.preventDefault()
 
         const formData = new FormData(event.currentTarget)
 
-        const response = await fetch('/api/feedback', {
-            method: 'POST',
-            body: JSON.stringify({
+       
+        const response = await sendNotification({
                 contacts: formData.get('contacts'),
                 name: formData.get('name'),
                 message: formData.get('message')
-            }),
         })
 
-        // Handle response if necessary
-        const data = await response.json()
-        // ...
+       console.log(response)
     }
     return (
 

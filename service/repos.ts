@@ -1,10 +1,11 @@
 import fs from 'fs';
 import moment from 'moment';
 import { Repos } from './types';
+import { API } from '@/config/api';
 
 const fetchRepos = async () => {
     try {
-        const reposResponse = await fetch('https://api.github.com/users/6y6jlb/repos', {
+        const reposResponse = await fetch(API.GET.REPOS, {
             next: { revalidate: 1800 },
         })
 
@@ -17,7 +18,7 @@ const fetchRepos = async () => {
 
 const fetchRepoLang = async (repoName: string) => {
     try {
-        const repoLanguagesResponse = await fetch(`https://api.github.com/repos/6y6jlb/${repoName}/languages`, {
+        const repoLanguagesResponse = await fetch(`${API.GET.LANG}/${repoName}/languages`, {
             next: { revalidate: 1800 },
         })
 

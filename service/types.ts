@@ -11,3 +11,11 @@ export type ReposData = {
 export type Repo = {
     [key: string]: any;
 };
+
+
+export interface FeedBackForm {
+    name: FormDataEntryValue | null;
+    contacts: FormDataEntryValue | null;
+    message: FormDataEntryValue | null
+  
+  }
