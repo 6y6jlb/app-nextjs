@@ -18,6 +18,7 @@
       height: max-content;
       border-radius: 3px;
       transition: all 0.7s ease-out;
+      background-color: var(--background-transparent-white);
 
       &.hide {
          top: -200px;

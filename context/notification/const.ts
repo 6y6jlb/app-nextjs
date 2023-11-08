@@ -1,0 +1,13 @@
+export enum NOTIFICATION_TYPE_ENUM {
+  SUCCESS = 'success',
+  DANGER = 'danger',
+  INFO = 'info',
+  DEFAULT = 'default',
+  WARNING = 'warning'
+}
+
+
+export enum NOTIFICATION_ACTION_TYPE_ENUM {
+  ADD_NOTIFICATION = 'ADD_NOTIFICATION',
+  REMOVE_NOTIFICATION = 'REMOVE_NOTIFICATION'
+}

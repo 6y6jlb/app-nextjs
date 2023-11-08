@@ -8,10 +8,11 @@
     left: 0;
     right: 0;
     background-color: var(--background-main-white);
-    padding: 20px 0;
+
 
 
     @media screen and (max-width: 480px) {
         background-color: transparent;
+        height: auto;
     }
 }

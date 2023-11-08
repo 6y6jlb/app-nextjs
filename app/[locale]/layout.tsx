@@ -7,6 +7,7 @@ import { LOCALES } from '../../messages/index';
 import Header from '@/components/header/Header';
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import Footer from '@/components/footer/Footer';
+import { NotificationsProvider } from '@/context/notification/contextPropvider';
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -34,11 +35,13 @@ export default async function RootLayout({
   return (
     <html lang={process.env.DEFAULT_LANGUAGE}>
       <body className={`${inter.className}`}>
-        <NextIntlClientProvider locale={locale} messages={messages}>
-          <Header />
-          {children}
-          <Footer/>
-        </NextIntlClientProvider>
+        <NotificationsProvider>
+          <NextIntlClientProvider locale={locale} messages={messages}>
+            <Header />
+            {children}
+            <Footer />
+          </NextIntlClientProvider>
+        </NotificationsProvider>
       </body>
     </html>
   )
