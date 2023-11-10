@@ -3,9 +3,21 @@ import { useTranslations } from 'next-intl';
 import { FormEvent } from 'react';
 import style from "./styles.module.css";
 import { sendNotification } from '@/service/notification';
+import React from 'react';
+import { NotificationsContext } from '@/context/notification/contextPropvider';
+import { NOTIFICATION_ACTION_TYPE_ENUM, NOTIFICATION_TYPE_ENUM } from '@/context/notification/const';
 
 export default function FeedbackForm() {
     const t = useTranslations("common");
+    
+    const context = React.useContext(NotificationsContext);
+
+    if (!context) {
+        throw new Error('useNotification must be used within a NotificationsProvider');
+      }
+  
+    const { state, dispatch } = context;
+
     
     async function onSubmit(event: FormEvent<HTMLFormElement>) {
         event.preventDefault()
@@ -13,13 +25,20 @@ export default function FeedbackForm() {
         const formData = new FormData(event.currentTarget)
 
        
+       try {
         const response = await sendNotification({
-                contacts: formData.get('contacts'),
-                name: formData.get('name'),
-                message: formData.get('message')
-        })
+            contacts: formData.get('contacts'),
+            name: formData.get('name'),
+            message: formData.get('message')
+            
+    })
 
-       console.log(response)
+    dispatch({type: NOTIFICATION_ACTION_TYPE_ENUM.ADD_NOTIFICATION, notification: {id: Math.random()*100 + ':notification', message: response.message, type: NOTIFICATION_TYPE_ENUM.SUCCESS} } )
+
+       } catch (error:any) {
+        dispatch({type: NOTIFICATION_ACTION_TYPE_ENUM.ADD_NOTIFICATION, notification: {id: Math.random()*100 + ':notification', message: error.message, type: NOTIFICATION_TYPE_ENUM.SUCCESS} } )
+       }
+
     }
     return (
 

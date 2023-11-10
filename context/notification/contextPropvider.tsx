@@ -1,8 +1,11 @@
+'use client'
+
 import React from "react";
 import { NotificationsProviderProps, NotificationState, NotificationDispatch } from "./types";
 import { notificationsReducer } from "./notificationReducer";
 
-const NotificationsContext = React.createContext<{ state: NotificationState; dispatch: NotificationDispatch } | undefined>(undefined);
+export const NotificationsContext = React.createContext<{ state: NotificationState; dispatch: NotificationDispatch } | undefined>(undefined);
+
 
 export const NotificationsProvider: React.FC<NotificationsProviderProps> = ({ children }) => {
   const [state, dispatch] = React.useReducer(notificationsReducer, { notifications: [] });

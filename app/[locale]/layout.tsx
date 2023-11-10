@@ -36,7 +36,7 @@ export default async function RootLayout({
     <html lang={process.env.DEFAULT_LANGUAGE}>
       <body className={`${inter.className}`}>
         <NotificationsProvider>
-          <NextIntlClientProvider locale={locale} messages={messages}>
+          <NextIntlClientProvider timeZone='UTC' locale={locale} messages={messages}>
             <Header />
             {children}
             <Footer />
