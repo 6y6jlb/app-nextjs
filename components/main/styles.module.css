@@ -13,7 +13,7 @@
 
     @media screen and (max-width: 1020px) {
       height: 600px;
-      justify-content: right;
+      justify-content: left;
       align-items: center;
     }
 

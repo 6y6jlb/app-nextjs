@@ -1,13 +1,14 @@
-import '../../styles/globals.css'
-import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
-import { NextIntlClientProvider } from 'next-intl';
-import { notFound } from 'next/navigation';
-import { LOCALES } from '../../messages/index';
+import Footer from '@/components/footer/Footer';
 import Header from '@/components/header/Header';
 import "@fortawesome/fontawesome-svg-core/styles.css";
-import Footer from '@/components/footer/Footer';
-import { NotificationsProvider } from '@/context/notification/contextPropvider';
+import type { Metadata } from 'next';
+import { NextIntlClientProvider } from 'next-intl';
+import { Inter } from 'next/font/google';
+import { notFound } from 'next/navigation';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { LOCALES } from '../../messages/index';
+import '../../styles/globals.css';
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -35,13 +36,12 @@ export default async function RootLayout({
   return (
     <html lang={process.env.DEFAULT_LANGUAGE}>
       <body className={`${inter.className}`}>
-        <NotificationsProvider>
-          <NextIntlClientProvider timeZone='UTC' locale={locale} messages={messages}>
-            <Header />
-            {children}
-            <Footer />
-          </NextIntlClientProvider>
-        </NotificationsProvider>
+        <NextIntlClientProvider timeZone='UTC' locale={locale} messages={messages}>
+          <ToastContainer />
+          <Header />
+          {children}
+          <Footer />
+        </NextIntlClientProvider>
       </body>
     </html>
   )

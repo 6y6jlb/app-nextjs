@@ -4,7 +4,7 @@
     align-items: center;
     position: fixed;
     height: var(--header-height);
-    z-index: 100500;
+    z-index: 1;
     left: 0;
     right: 0;
     background-color: var(--background-main-white);

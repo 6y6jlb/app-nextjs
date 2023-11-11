@@ -1,11 +1,12 @@
 'use client'
 import { TakeLanguages } from "@/service/lang"
-import Chart from "react-apexcharts"
 import { Audio, } from "react-loader-spinner"
 import { getChartData } from '../../service/chart'
 import Title from "../title/Title"
 import chartOptions from "./chart"
 import style from "./styles.module.css"
+import dynamic from "next/dynamic";
+const Chart = dynamic(() => import("react-apexcharts"), { ssr: false });
 
 
 export default function Languages({languages}: IProps) {
