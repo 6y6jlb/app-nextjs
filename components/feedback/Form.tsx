@@ -23,9 +23,12 @@ export default function FeedbackForm() {
                 message: formData.get('message')
 
             })
+    
+            
             toast(response.message, { hideProgressBar: true, type: 'success' })
 
         } catch (error: any) {
+            console.log(error)
             toast(error.message, { hideProgressBar: true, type: 'error' })
         }
 
