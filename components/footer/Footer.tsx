@@ -1,10 +1,11 @@
+import moment from "moment"
 import style from "./styles.module.css"
 
 
-const Footer = (props:any) => {
+const Footer = (props: any) => {
 	return (
 		<div className={style.container}>
-				<div className={style.description}>2023</div>
+			<div className={style.description}>{moment().year()}</div>
 		</div>
 	)
 }
