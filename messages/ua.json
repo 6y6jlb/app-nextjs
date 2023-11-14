@@ -7,15 +7,15 @@
             "common": "Загальне"
         },
         "main": {
-            "describtion": "Мене звуть Басалов Олексій, і це моє портфоліо",
+            "description": "Мене звуть Басалов Олексій, і це моє портфоліо",
             "greeting": "Привіт"
         },
         "typing": {
-            "zero": "Я ",
-            "first": "фронтенд-розробник",
-            "second": "розробник на React",
-            "third": "розробник на Redux",
-            "fourth": "розробник на TypeScript"
+            "i": "I'm ",
+            "frontend": "frontend",
+            "backend": "backend",
+            "fullstack": "fullstack",
+            "developer": "developer"
         },
         "remote": {
             "agree": "погоджуюсь",

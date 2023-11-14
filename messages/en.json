@@ -7,15 +7,15 @@
             "common": "Common"
         },
         "main": {
-            "describtion": "My name is Basalov Alexey and this is my portfolio",
+            "description": "My name is Basalov Alexey and this is my portfolio",
             "greeting": "Hello"
         },
         "typing": {
-            "zero": "I,m ",
-            "first": " frontend developer",
-            "second": " react developer",
-            "third": " redux developer",
-            "fourth": " typescript developer"
+            "i": "I'm ",
+            "frontend": "frontend",
+            "backend": "backend",
+            "fullstack": "fullstack",
+            "developer": "developer"
         },
         "remote": {
             "agree": "agree",

@@ -7,15 +7,15 @@
             "common": "Общее"
         },
         "main": {
-            "describtion": "Меня зовут Басалов Алексей, и это мое портфолио",
+            "description": "Меня зовут Басалов Алексей, и это мое портфолио",
             "greeting": "Привет"
         },
         "typing": {
-            "zero": "Я ",
-            "first": "фронтенд-разработчик",
-            "second": "разработчик на React",
-            "third": "разработчик на Redux",
-            "fourth": "разработчик на TypeScript"
+            "i": "I'm ",
+            "frontend": "frontend",
+            "backend": "backend",
+            "fullstack": "fullstack",
+            "developer": "developer"
         },
         "remote": {
             "agree": "согласен",
