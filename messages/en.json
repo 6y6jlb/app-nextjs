@@ -35,6 +35,18 @@
             "save": "save",
             "send": "send",
             "contact-us": "contact us directly"
+        },
+        "weather": {
+            "place": "Place",
+            "temperature": "Temperature",
+            "feels-like": "Feels like",
+            "humidity": "Humidity"
+        },
+        "notification": {
+            "weather": {
+                "success": "Weather received",
+                "error": "An error occurred during the weather request, try again later"
+            }
         }
     }
 }
