@@ -37,6 +37,7 @@
             "contact-us": "contact us directly"
         },
         "weather": {
+            "description": "Here you can find out the weather. To do this, enter the name of the city and click.",
             "place": "Place",
             "temperature": "Temperature",
             "feels-like": "Feels like",
