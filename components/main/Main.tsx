@@ -3,6 +3,10 @@ import style from "./styles.module.css"
 
 const Main = () => {
 	const t = useTranslations("common");
+
+	const sneakyRedirect = () => {
+		
+	}
 	
 
 	return (

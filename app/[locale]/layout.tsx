@@ -1,5 +1,6 @@
 import Footer from '@/components/footer/Footer';
 import Header from '@/components/header/Header';
+import { LINK_TYPE_ENUM } from '@/config/navigation';
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import type { Metadata } from 'next';
 import { NextIntlClientProvider } from 'next-intl';
@@ -38,7 +39,7 @@ export default async function RootLayout({
       <body className={`${inter.className}`}>
         <NextIntlClientProvider timeZone='UTC' locale={locale} messages={messages}>
           <ToastContainer />
-          <Header />
+          <Header linkType={LINK_TYPE_ENUM.MAIN}/>
           {children}
           <Footer />
         </NextIntlClientProvider>

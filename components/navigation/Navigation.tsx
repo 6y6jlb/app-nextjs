@@ -1,14 +1,14 @@
 'use client'
-import React, { useState } from "react"
-import Link from 'next/link'
+import { PATH_TYPE_ENUM } from "@/config/navigation";
+import { ILink } from "@/config/types";
 import { useTranslations, } from 'next-intl';
+import Link from 'next/link';
 import LanguageSwitcher from "../languageSwitcher/LanguageSwitcher";
-import { LINKS } from "@/config/navigation";
-import style from "./styles.module.css"
+import style from "./styles.module.css";
 
 
 
-export default function Navigation() {
+export default function Navigation({ links }: IProps) {
 
 	const t = useTranslations("common");
 	let hash = '';
@@ -18,12 +18,12 @@ export default function Navigation() {
 	}
 
 
-	const links = LINKS.map(el => {
+	const mappedLinks = links.map(el => {
 		return (
 			<Link
-				className={hash.includes(el.id) ? 'active' : ''}
-				href={`/#${el.id}`}
-				key={el.id}
+				className={hash.includes(el.path) ? 'active' : ''}
+				href={el.type === PATH_TYPE_ENUM.ID ? `/#${el.path}` : el.path}
+				key={el.path}
 			>
 				{t(el.title)}
 			</Link>
@@ -32,8 +32,12 @@ export default function Navigation() {
 
 	return (
 		<div className={style.navigation}>
-			{links}
+			{mappedLinks}
 			<LanguageSwitcher />
 		</div>
 	)
 };
+
+interface IProps {
+	links: ILink[]
+}

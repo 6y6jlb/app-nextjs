@@ -1,14 +1,15 @@
 'use client'
-import { LINKS } from "@/config/navigation"
+import { PATH_TYPE_ENUM } from "@/config/navigation"
+import { ILink } from "@/config/types"
 import { faBars } from "@fortawesome/free-solid-svg-icons/faBars"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { useTranslations } from "next-intl"
-import { useState } from "react"
-import style from "./styles.module.css"
 import Link from "next/link"
+import { useState } from "react"
 import LanguageSwitcher from "../languageSwitcher/LanguageSwitcher"
+import style from "./styles.module.css"
 
-export default function BurgerNavigation() {
+export default function BurgerNavigation({ links }: IProps) {
 
 	const [isOpen, setIsOpen] = useState(false)
 	const t = useTranslations("common");
@@ -20,12 +21,12 @@ export default function BurgerNavigation() {
 	}
 
 
-	const links = LINKS.map(el => {
+	const mappedLinks = links.map(el => {
 		return (
 			<Link
-				className={hash.includes(el.id) ? 'active' : ''}
-				href={`#${el.id}`}
-				key={el.id}
+				className={hash.includes(el.path) ? 'active' : ''}
+				href={el.type === PATH_TYPE_ENUM.ID ? `/#${el.path}` : el.path}
+				key={el.path}
 			>
 				{t(el.title)}
 			</Link>
@@ -38,9 +39,13 @@ export default function BurgerNavigation() {
 				<FontAwesomeIcon style={{ fontSize: "28px", color: isOpen ? "grey" : "white" }} icon={faBars} />
 			</div>
 			<div className={isOpen ? style.burgerNavItems : `${style.burgerNavItems} ${style.hide}`}>
-				{links}
+				{mappedLinks}
 				<LanguageSwitcher />
 			</div>
 		</div>
 	)
+}
+
+interface IProps {
+	links: ILink[]
 }
