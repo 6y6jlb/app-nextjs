@@ -1,5 +1,4 @@
 'use client'
-import { PATH_TYPE_ENUM } from "@/config/navigation";
 import { ILink } from "@/config/types";
 import { useTranslations, } from 'next-intl';
 import Link from 'next/link';
@@ -22,7 +21,7 @@ export default function Navigation({ links }: IProps) {
 		return (
 			<Link
 				className={hash.includes(el.path) ? 'active' : ''}
-				href={el.type === PATH_TYPE_ENUM.ID ? `/#${el.path}` : el.path}
+				href={el.path}
 				key={el.path}
 			>
 				{t(el.title)}

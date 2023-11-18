@@ -1,13 +1,13 @@
 import { useTranslations } from "next-intl";
-import style from "./styles.module.css"
+import style from "./styles.module.css";
 
 const Main = () => {
 	const t = useTranslations("common");
 
 	const sneakyRedirect = () => {
-		
+
 	}
-	
+
 
 	return (
 		<div id={"common"} className={style.main}>

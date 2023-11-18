@@ -9,15 +9,14 @@ import style from "./styles.module.css";
 
 export default async function Page() {
 
-
   const repos = await getRepos()
   return (
     <main className={style.main}>
       <Main />
       <Languages languages={takeLanguages(repos.data)} />
-      <Projects projects={repos.data}/>
+      <Projects projects={repos.data} />
       <RemoteJob />
-      <Contacts  master={process.env.OWNER_FIRST_NAME  +' '+ process.env.OWNER_LAST_NAME}/>
+      <Contacts master='BASALOV ALEXSEY' />
     </main>
   )
 }

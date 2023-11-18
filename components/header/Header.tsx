@@ -7,8 +7,6 @@ import style from "./styles.module.css"
 
 const Header = ({linkType}: IProps) => {
 
-	
-
 	return (
 		<div className={style.header}>
 			<Navigation links={LINKS[linkType] as ILink[]}/>

@@ -4,7 +4,10 @@
             "languages": "Languages",
             "projects": "Projects",
             "contact": "Contact",
-            "common": "Common"
+            "common": "Common",
+            "weather": "Weather",
+            "profile": "Profile",
+            "tasks": "Tasks"
         },
         "main": {
             "description": "My name is Basalov Alexey and this is my portfolio",

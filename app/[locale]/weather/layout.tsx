@@ -11,7 +11,7 @@ export default async function Layout({
 }) {
 
   return (
-    <RootLayout params={{ locale, type: LINK_TYPE_ENUM.MAIN }}>
+    <RootLayout params={{ locale, type: LINK_TYPE_ENUM.SNEAKY }}>
       {children}
     </RootLayout>
   )

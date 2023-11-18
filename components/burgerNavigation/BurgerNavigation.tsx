@@ -1,5 +1,4 @@
 'use client'
-import { PATH_TYPE_ENUM } from "@/config/navigation"
 import { ILink } from "@/config/types"
 import { faBars } from "@fortawesome/free-solid-svg-icons/faBars"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
@@ -25,7 +24,7 @@ export default function BurgerNavigation({ links }: IProps) {
 		return (
 			<Link
 				className={hash.includes(el.path) ? 'active' : ''}
-				href={el.type === PATH_TYPE_ENUM.ID ? `/#${el.path}` : el.path}
+				href={el.path}
 				key={el.path}
 			>
 				{t(el.title)}
