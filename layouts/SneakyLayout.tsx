@@ -8,10 +8,7 @@ import { ToastContainer } from 'react-toastify';
 
 export default async function SneakyLayout({
   children, params: { locale, type }
-}: {
-  children: React.ReactNode
-  params: IProps
-}) {
+}: IProps) {
   let messages;
   try {
     //@ts-ignore
@@ -32,6 +29,9 @@ export default async function SneakyLayout({
 }
 
 interface IProps {
-  locale: string;
-  type: LINK_TYPE_ENUM;
+  children: React.ReactNode,
+  params: {
+    locale: string;
+    type: LINK_TYPE_ENUM;
+  };
 }
