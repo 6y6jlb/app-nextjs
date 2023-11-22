@@ -1,6 +1,5 @@
 import { LINK_TYPE_ENUM } from '@/config/navigation';
-import RootLayout from '@/layouts/RootLayout';
-
+import SneakyLayout from '@/layouts/SneakyLayout';
 
 
 export default async function Layout({
@@ -11,8 +10,8 @@ export default async function Layout({
 }) {
 
   return (
-    <RootLayout params={{ locale, type: LINK_TYPE_ENUM.SNEAKY }}>
+    <SneakyLayout params={{ locale, type: LINK_TYPE_ENUM.SNEAKY }}>
       {children}
-    </RootLayout>
+    </SneakyLayout>
   )
 }

@@ -6,6 +6,9 @@ import RemoteJob from "@/components/remoteJob/RemoteJob";
 import { takeLanguages } from "@/service/lang";
 import { getRepos } from "@/service/repos";
 import style from "./styles.module.css";
+import RootLayout from "@/layouts/RootLayout";
+import { LINK_TYPE_ENUM } from "@/config/navigation";
+import { ReactElement } from "react";
 
 export default async function Page() {
 
@@ -18,5 +21,14 @@ export default async function Page() {
       <RemoteJob />
       <Contacts master='BASALOV ALEXSEY' />
     </main>
+  )
+}
+
+
+Page.getLayout = function getLayout(page: ReactElement) {
+  return (
+      <RootLayout params={{ locale:'ru', type: LINK_TYPE_ENUM.SNEAKY }}>
+          {page}
+      </RootLayout>
   )
 }

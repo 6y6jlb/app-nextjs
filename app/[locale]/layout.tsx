@@ -1,6 +1,6 @@
 import { LINK_TYPE_ENUM } from '@/config/navigation';
+import PortfolioLayout from '@/layouts/PorfolioLayout';
 import RootLayout from '@/layouts/RootLayout';
-
 
 
 export default async function Layout({
@@ -11,8 +11,10 @@ export default async function Layout({
 }) {
 
   return (
-    <RootLayout params={{ locale, type: LINK_TYPE_ENUM.MAIN }}>
-      {children}
+    <RootLayout params={{ locale }}>
+      <PortfolioLayout params={{ locale, type: LINK_TYPE_ENUM.MAIN }}>
+        {children}
+      </PortfolioLayout>
     </RootLayout>
   )
 }

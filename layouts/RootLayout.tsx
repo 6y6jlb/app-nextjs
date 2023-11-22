@@ -1,14 +1,10 @@
-import Footer from '@/components/footer/Footer';
-import Header from '@/components/header/Header';
 import { LINK_TYPE_ENUM } from '@/config/navigation';
 import { LOCALES } from '@/messages/index';
 import '@/styles/globals.css';
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import type { Metadata } from 'next';
-import { NextIntlClientProvider } from 'next-intl';
 import { Inter } from 'next/font/google';
 import { notFound } from 'next/navigation';
-import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 
@@ -20,7 +16,7 @@ export const metadata: Metadata = {
 }
 
 export default async function RootLayout({
-  children, params: { locale, type }
+  children, params: { locale }
 }: {
   children: React.ReactNode
   params: IProps
@@ -37,12 +33,7 @@ export default async function RootLayout({
   return (
     <html lang={process.env.DEFAULT_LANGUAGE}>
       <body className={`${inter.className}`}>
-        <NextIntlClientProvider timeZone='UTC' locale={locale} messages={messages}>
-          <ToastContainer />
-          <Header linkType={type} />
-          {children}
-          <Footer />
-        </NextIntlClientProvider>
+      {children}
       </body>
     </html>
   )
@@ -50,5 +41,4 @@ export default async function RootLayout({
 
 interface IProps {
   locale: string;
-  type: LINK_TYPE_ENUM;
 }

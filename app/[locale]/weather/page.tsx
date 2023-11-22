@@ -1,4 +1,4 @@
-
+'use client'
 import Weather from '@/components/weather/Weather';
 import style from "./styles.module.css";
 

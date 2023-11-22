@@ -8,11 +8,11 @@ import { toast } from 'react-toastify'
 import { IWeather } from '@/service/types'
 import { TEMPERATURE_SIGN } from '@/config/weather'
 
-const Weather = () => {
+export default function Weather () {
   const [forecasts, setForecasts] = React.useState([] as IWeather[])
 
-  const locale = useLocale()
   const t = useTranslations("common");
+  const locale = useLocale()
 
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
@@ -51,7 +51,3 @@ const Weather = () => {
     </div>
   )
 }
-
-
-
-export default Weather
