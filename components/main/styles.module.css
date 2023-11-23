@@ -35,13 +35,22 @@
       animation: fadeIn 2s ease-in-out;
       display: inline-block;
       overflow: hidden;
-      border-right: .15em solid black; /* The cursor */
-      white-space: nowrap; 
+      border-right: .15em solid black;
+      white-space: nowrap;
       letter-spacing: .15em;
-      animation: 
-          typing 5s steps(100, end) infinite,
-          blinkCursor .75s step-end infinite;
+      animation:
+        typing 5s steps(100, end) infinite,
+        blinkCursor .75s step-end infinite;
+
+      @media screen and (max-width: 800px) {
+        animation: none;
+        text-wrap: wrap;
+        width: 50%;
+        right: 20%;
+        border: none;
+      }
     }
+
 
     .block {
       width: 60%;
@@ -58,16 +67,22 @@
 
 @keyframes typing {
   from {
-      width: 0;
+    width: 0;
   }
+
   to {
-      width: 100%;
+    width: 100%;
   }
 }
 
 @keyframes blinkCursor {
-  from, to { border-color: transparent }
-  50% { border-color: black; }
+
+  from,
+  to {
+    border-color: transparent
+  }
+
+  50% {
+    border-color: black;
+  }
 }
-
-

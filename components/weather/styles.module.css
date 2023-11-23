@@ -7,6 +7,7 @@
   grid-template-rows: min-content min-content 1fr;
   margin-top: 15%;
   justify-items: center;
+  padding: 0 20px;
 }
 
 
