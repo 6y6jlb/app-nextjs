@@ -7,7 +7,8 @@ export enum PATH_TYPE_ENUM {
 
 export enum LINK_TYPE_ENUM {
     MAIN = 'main',
-    SNEAKY = 'sneaky'
+    SNEAKY_PUBLIC = 'sneaky_public',
+    SNEAKY_PRIVATE = 'sneaky_private',
 }
 
 
@@ -18,10 +19,16 @@ export const LINKS: ILinks = {
         { path: '/#projects', title: 'navigation.projects', type: PATH_TYPE_ENUM.ID },
         { path: '/#contact', title: 'navigation.contact', type: PATH_TYPE_ENUM.ID },
     ],
-    [LINK_TYPE_ENUM.SNEAKY]: [
+    [LINK_TYPE_ENUM.SNEAKY_PUBLIC]: [
+        { path: '/#common', title: 'navigation.common', type: PATH_TYPE_ENUM.ID },
+        { path: '/weather', title: 'navigation.weather', type: PATH_TYPE_ENUM.ROUTE },
+        { path: '/auth', title: 'navigation.auth', type: PATH_TYPE_ENUM.ROUTE },
+    ],
+    [LINK_TYPE_ENUM.SNEAKY_PRIVATE]: [
         { path: '/#common', title: 'navigation.common', type: PATH_TYPE_ENUM.ID },
         { path: '/weather', title: 'navigation.weather', type: PATH_TYPE_ENUM.ROUTE },
         { path: '/profile', title: 'navigation.profile', type: PATH_TYPE_ENUM.ROUTE },
         { path: '/tasks', title: 'navigation.tasks', type: PATH_TYPE_ENUM.ROUTE },
-    ]
+        { path: '/auth/logout', title: 'navigation.logout', type: PATH_TYPE_ENUM.ROUTE },
+    ],
 }

@@ -7,7 +7,9 @@
             "common": "Common",
             "weather": "Weather",
             "profile": "Profile",
-            "tasks": "Tasks"
+            "tasks": "Tasks",
+            "auth": "Login",
+            "logout": "Exit"
         },
         "main": {
             "description": "My name is Basalov Alexey and this is my portfolio",
