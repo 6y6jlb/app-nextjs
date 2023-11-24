@@ -1,12 +1,12 @@
 'use client'
 import { useState } from "react"
-import Title from "../title/Title"
+import Title from "../theme/title/Title"
 import { contacts } from "./const"
 import style from "./styles.module.css"
 import { useTranslations } from "next-intl"
 
 
-export default function Footer ({master}: IProps)  {
+export default function Footer({ master }: IProps) {
 	const [active, setActive] = useState(null as any)
 	const t = useTranslations("common");
 	const mappedContacts = contacts.map((c, index) => {

@@ -1,7 +1,7 @@
 import { LINKS, LINK_TYPE_ENUM } from "@/config/navigation"
 import { ILink } from "@/config/types"
-import BurgerNavigation from "../burgerNavigation/BurgerNavigation"
-import Navigation from "../navigation/Navigation"
+import BurgerNavigation from "@/components/theme/burgerNavigation/BurgerNavigation"
+import Navigation from "@/components/theme/navigation/Navigation"
 import style from "./styles.module.css"
 
 

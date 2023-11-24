@@ -19,6 +19,7 @@ export const LINKS: ILinks = {
         { path: '/#contact', title: 'navigation.contact', type: PATH_TYPE_ENUM.ID },
     ],
     [LINK_TYPE_ENUM.SNEAKY]: [
+        { path: '/#common', title: 'navigation.common', type: PATH_TYPE_ENUM.ID },
         { path: '/weather', title: 'navigation.weather', type: PATH_TYPE_ENUM.ROUTE },
         { path: '/profile', title: 'navigation.profile', type: PATH_TYPE_ENUM.ROUTE },
         { path: '/tasks', title: 'navigation.tasks', type: PATH_TYPE_ENUM.ROUTE },

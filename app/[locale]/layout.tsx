@@ -1,6 +1,6 @@
 import { LINK_TYPE_ENUM } from '@/config/navigation';
-import PortfolioLayout from '@/layouts/PorfolioLayout';
-import RootLayout from '@/layouts/RootLayout';
+import PortfolioLayout from '@/components/layouts/PorfolioLayout';
+import RootLayout from '@/components/layouts/RootLayout';
 
 
 export default async function Layout({

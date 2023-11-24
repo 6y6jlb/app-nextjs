@@ -2,7 +2,7 @@
 import { ILink } from "@/config/types";
 import { useTranslations, } from 'next-intl';
 import Link from 'next/link';
-import LanguageSwitcher from "../languageSwitcher/LanguageSwitcher";
+import LanguageSwitcher from "@/components/theme/languageSwitcher/LanguageSwitcher";
 import style from "./styles.module.css";
 
 

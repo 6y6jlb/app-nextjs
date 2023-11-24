@@ -1,5 +1,5 @@
-import Footer from '@/components/footer/Footer';
-import Header from '@/components/header/Header';
+import Footer from '@/components/theme/footer/Footer';
+import Header from '@/components/theme/header/Header';
 import { LINK_TYPE_ENUM } from '@/config/navigation';
 import { LOCALES } from '@/messages/index';
 import { NextIntlClientProvider } from 'next-intl';

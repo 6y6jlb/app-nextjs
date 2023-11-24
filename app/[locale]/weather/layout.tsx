@@ -1,5 +1,5 @@
 import { LINK_TYPE_ENUM } from '@/config/navigation';
-import SneakyLayout from '@/layouts/SneakyLayout';
+import SneakyLayout from '@/components/layouts/SneakyLayout';
 
 
 export default async function Layout({

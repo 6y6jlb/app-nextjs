@@ -2,7 +2,7 @@
 import { useState } from "react"
 import { Audio } from "react-loader-spinner"
 import ProjectItem from "../projectItem/ProjectItem"
-import Title from "../title/Title"
+import Title from "../theme/title/Title"
 import style from "./styles.module.css"
 import { ReposData } from "@/service/types"
 
@@ -12,7 +12,7 @@ export default function Projects({ projects }: IProps) {
 
 	const mappedProjects = [
 		projects &&
-		Object.values(projects).filter(el=>!['a3f-group-test', '6y6jlb'].includes(el.name)).map((project: any, index: number) => (
+		Object.values(projects).filter(el => !['a3f-group-test', '6y6jlb'].includes(el.name)).map((project: any, index: number) => (
 			<ProjectItem key={index} activeRepoName={activeRepoName} setActiveRepoName={setActiveRepoName} project={project} />
 		)),
 	]
