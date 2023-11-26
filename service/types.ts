@@ -1,4 +1,5 @@
 import { OPEN_WEATHER_UNITS } from "@/config/weather";
+import { IAuthForm as IAuthFormClient } from '../components/auth/types';
 
 export type Repos = {
     timestamp: string | null | undefined;
@@ -18,14 +19,14 @@ export interface FeedBackForm {
     name: FormDataEntryValue | null;
     contacts: FormDataEntryValue | null;
     message: FormDataEntryValue | null
-  
-  }
 
-  export interface WeatherForm {
+}
+
+export interface WeatherForm {
     city: FormDataEntryValue | null;
-  }
+}
 
-  export interface IWeather {
+export interface IWeather {
 
     city?: string
     units: OPEN_WEATHER_UNITS
@@ -80,4 +81,8 @@ export interface FeedBackForm {
     "name": String // "Zocca",
     "cod": Number // 200
 
+}
+
+export type AuthForm = IAuthFormClient & {
+    locale: string
 }

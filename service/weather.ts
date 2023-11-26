@@ -5,7 +5,7 @@ export const getWeather = async (formData: WeatherForm, locale: string): Promise
 
     const url = new URL(API.GET.WEATHER);
 
-    url.searchParams.append('language', locale);
+    url.searchParams.append('locale', locale);
     url.searchParams.append('city', formData.city as string);
     
     try {
@@ -18,7 +18,6 @@ export const getWeather = async (formData: WeatherForm, locale: string): Promise
         if (!response.ok) {
             throw new Error(json.message);
         }
-        console.log('1231')
         return json
     } catch (error: any) {
         throw new Error(error.message);

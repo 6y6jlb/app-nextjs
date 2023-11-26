@@ -1,6 +1,8 @@
 export const API = {
     POST: {
         NOTIFICATION: `${process.env.NEXT_PUBLIC_LBAS_HOST}/api/notification/email/send`,
+        LOGIN: `${process.env.NEXT_PUBLIC_LBAS_HOST}/api/login`,
+        REGISTER: `${process.env.NEXT_PUBLIC_LBAS_HOST}/api/register`,
     },
     GET: {
         REPOS: 'https://api.github.com/users/6y6jlb/repos',

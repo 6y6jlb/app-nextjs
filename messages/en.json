@@ -52,6 +52,28 @@
             "weather": {
                 "success": "Weather received",
                 "error": "An error occurred during the weather request, try again later"
+            },
+            "auth": {
+                "success": "Login completed",
+                "error": "An error has occurred, try again later"
+            }
+        },
+        "auth": {
+            "description-login": "Login",
+            "description-register": "Registration in the system"
+        },
+        "form": {
+            "placeholder": {
+                "requirements": "How can I find you",
+                "name": "Specify your name",
+                "message": "Specify a message",
+                "city": "Specify the city",
+                "login": "Enter your username",
+                "password": "Enter the password",
+                "password-repeat": "Repeat the password"
+            },
+            "label": {
+                "register-already": "Already registered"
             }
         }
     }

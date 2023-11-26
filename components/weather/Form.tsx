@@ -11,7 +11,7 @@ export function WeatherForm({ onSubmit }: IProps) {
         <form className={style.form} onSubmit={onSubmit}>
             <input
 
-                placeholder={"city"}
+                placeholder={t("form.placeholder.city")}
                 name={"city"}
                 type="text"
                 className={style.item}

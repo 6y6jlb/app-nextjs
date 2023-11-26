@@ -38,19 +38,19 @@ export default function FeedbackForm() {
         <form className={style['feedback-form']} onSubmit={onSubmit}>
             <input
 
-                placeholder={"contacts/email/phone"}
+                placeholder={t("form.placeholder.requisites")}
                 name={"contacts"}
                 type="text"
                 className={style.item}
             />
             <input
-                placeholder={"name"}
+                placeholder={t("form.placeholder.name")}
                 name={"name"}
                 type="text"
                 className={style.item}
             />
             <textarea
-                name={"message"}
+                name={t("form.placeholder.message")}
                 placeholder={"message"}
                 className={style.item}
             />

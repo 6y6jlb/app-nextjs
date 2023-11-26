@@ -1,36 +1,36 @@
 'use client'
-import { IWeather } from '@/service/types'
-import { getWeather } from '@/service/weather'
+import { auth } from '@/service/auth'
 import { useLocale, useTranslations } from 'next-intl'
 import React, { FormEvent } from 'react'
 import { toast } from 'react-toastify'
 import { AuthForm } from './Form'
+import { DEFAULT_AUTH_FORM } from './const'
 import styles from './styles.module.css'
+import { IAuthForm } from './types'
 
 export default function Auth() {
-  const [forecasts, setForecasts] = React.useState([] as IWeather[])
+  const [form, setForm] = React.useState(DEFAULT_AUTH_FORM as IAuthForm)
 
   const t = useTranslations("common");
   const locale = useLocale()
 
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
-    const formData = new FormData(event.currentTarget)
 
     try {
-      const newForecast = await getWeather({ city: formData.get('city'), }, locale);
-      setForecasts([newForecast, ...forecasts])
-      toast(t('notification.weather.success'), { hideProgressBar: true, type: 'success' })
+      const result = await auth({ ...form, locale });
+      setForm(DEFAULT_AUTH_FORM)
+      toast(t('notification.auth.success'), { hideProgressBar: true, type: 'success' })
     } catch (error: any) {
       console.log(error)
-      toast(t('notification.weather.error'), { hideProgressBar: true, type: 'error' })
+      toast(t('notification.auth.error'), { hideProgressBar: true, type: 'error' })
     }
   }
-
+  
   return (
     <div className={styles.container}>
-      <p>{t('weather.description')}</p>
-      <AuthForm onSubmit={onSubmit} />
+      <p>{t(form.already_register ? 'auth.description-login' : 'auth.description-register')}</p>
+      <AuthForm onSubmit={onSubmit} formData={form} onChange={setForm}/>
     </div>
   )
 }
