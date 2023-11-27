@@ -14,11 +14,11 @@ export const sendNotification = async (formData: FeedBackForm) => {
         }),
     })
 
-    const json =  await response.json();
+    const json = await response.json();
 
     if (!response.ok) {
         throw new Error(json.message);
     }
 
-    return  json
+    return json
 }

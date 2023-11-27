@@ -23,8 +23,8 @@ export default function FeedbackForm() {
                 message: formData.get('message')
 
             })
-    
-            
+
+
             toast(response.message, { hideProgressBar: true, type: 'success' })
 
         } catch (error: any) {
@@ -50,8 +50,8 @@ export default function FeedbackForm() {
                 className={style.item}
             />
             <textarea
-                name={t("form.placeholder.message")}
-                placeholder={"message"}
+                placeholder={t("form.placeholder.message")}
+                name={"message"}
                 className={style.item}
             />
             <button
