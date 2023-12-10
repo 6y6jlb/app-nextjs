@@ -5,14 +5,13 @@ module.exports = withNextIntl({
 		return [
 			{
 				source: "/",
-				destination: "/portfolio",
+				destination: "/en/portfolio",
 				permanent: true,
 			},
 			{
 				source: "/:lang(en|ru|ua)",
-				destination: "/portfolio",
+				destination: "/:lang/portfolio",
 				permanent: true,
-				locale: false,
 			},
 		]
 	},

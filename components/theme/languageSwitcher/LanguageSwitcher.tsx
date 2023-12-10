@@ -24,9 +24,7 @@ const LanguageSwitcher = () => {
 	return (
 		<select
 			value={locale}
-			onChange={(e) => {
-				location.assign('/' + e.currentTarget.value)
-			}}
+			onChange={(e) => console.log(e)}
 			className={style.select}
 		>
 			{options}
