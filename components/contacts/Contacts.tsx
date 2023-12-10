@@ -25,7 +25,7 @@ export default function Footer({ master }: IProps) {
 	return (
 		<div id='contact' className={`main-container ${style.container}`}>
 			<Title title-key='contacts.title' />
-			<button className={style.button} onClick={(e) => {
+			<button className="btn-primary" onClick={(e) => {
 				location.assign('/feedback' + e.currentTarget.value)
 			}}>{t('button.contact-us')}</button>
 			<div className={style.master}>{master}</div>

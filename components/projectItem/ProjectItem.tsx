@@ -14,7 +14,7 @@ export default function ProjectItem({ activeRepoName, project, setActiveRepoName
 		<div onMouseEnter={() => setActiveRepoName(project.name)} className={style.project}>
 			<div className={style.imageBlock}>
 				<div className={`${style.image} ${activeStyle ? style.active : ''} ${getImageClass(style, project.name)}`} />
-				<a href={project.html_url} className={style.button}>
+				<a href={project.html_url} className={style['button-link']}>
 					{t('projects.link-to')}
 				</a>
 			</div>

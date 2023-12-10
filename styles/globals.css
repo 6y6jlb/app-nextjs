@@ -2,11 +2,16 @@
   --text-main-white: #dcdcdc;
   --text-main-black: #222223;
   --text-main-active: #3BA3D0;
+
   --background-main-black: #222223;
   --background-main-white: #dcdcdc;
   --background-transparent-white: rgba(252, 252, 237, 0.55);
+
   --header-height: 50px;
   --footer-height: 50px;
+
+  --form-background-disabled: #9b9ba0;
+  --form-color-disabled: rgb(87, 87, 92);
 }
 
 * {
@@ -49,6 +54,37 @@ select,
   }
 }
 
+button {
+  border: none;
+  text-transform: uppercase;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.1s ease-out;
+}
+
+button:focus, button:hover {
+  transform: scale(1.04);
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+textarea {
+  height: 130px;
+  border: none;
+  resize: none;
+
+}
+
+button:disabled, input:disabled, textarea:disabled {
+  background-color: var(--form-background-disabled);
+  color: var(--form-color-disabled);
+}
+
 .main-container {
   margin: 0 auto;
   width: 80%;
@@ -63,3 +99,14 @@ select,
   text-decoration: var(--text-main-active);
   color: var(--text-main-active);
 }
+
+.btn-primary {
+  background-color: var(--background-main-black);
+  color: var(--text-main-white);
+}
+
+.btn-secondary {
+  background-color: var(--text-main-white);
+  color: var(--background-main-black);
+}
+

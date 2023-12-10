@@ -44,15 +44,3 @@
 
   }
 }
-
-.button {
-  border: none;
-  text-transform: uppercase;
-  padding: 10px;
-  display: flex;
-  justify-content: center;
-  cursor: pointer;
-  border-radius: 4px;
-  background-color: var(--background-main-black);
-  color: var(--text-main-white);
-}

@@ -3,7 +3,7 @@ import { useTranslations } from "next-intl";
 import style from "./styles.module.css";
 import { useRouter } from "next/navigation";
 
-const Main = () => {
+const Portfolio = () => {
 	const t = useTranslations("common");
 	const router = useRouter();
 
@@ -22,4 +22,4 @@ const Main = () => {
 		</div>
 	)
 }
-export default Main
+export default Portfolio

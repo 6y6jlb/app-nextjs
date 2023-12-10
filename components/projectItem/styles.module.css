@@ -10,7 +10,7 @@
     height: 250px;
     position: relative;
 
-    .button {
+    .button-link {
       z-index: 1;
       text-transform: lowercase;
       top: 30%;

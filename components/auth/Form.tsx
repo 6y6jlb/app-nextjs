@@ -4,7 +4,7 @@ import { ChangeEvent, FormEvent } from 'react';
 import style from "./styles.module.css";
 import { IAuthForm } from './types';
 
-export function AuthForm({ onSubmit, formData, onChange }: IProps) {
+export function Form({ onSubmit, formData, onChange, loading }: IProps) {
     const t = useTranslations("common");
 
     const fieldHandler = (fieldName: string) => (e: ChangeEvent<HTMLInputElement>) => {
@@ -20,6 +20,7 @@ export function AuthForm({ onSubmit, formData, onChange }: IProps) {
             <div className={style.radio}>
                 <label htmlFor="auth">{t('form.label.register-already')}</label>
                 <input
+                    disabled={loading}
                     name="already_register"
                     type="checkbox"
                     checked={formData.already_register}
@@ -28,6 +29,7 @@ export function AuthForm({ onSubmit, formData, onChange }: IProps) {
                 />
             </div>
             <input
+                disabled={loading}
                 placeholder={t("form.placeholder.login")}
                 name={"login"}
                 type="text"
@@ -36,7 +38,7 @@ export function AuthForm({ onSubmit, formData, onChange }: IProps) {
                 className={style.item}
             />
             <input
-
+                disabled={loading}
                 placeholder={t("form.placeholder.password")}
                 name={"password"}
                 type="text"
@@ -46,6 +48,7 @@ export function AuthForm({ onSubmit, formData, onChange }: IProps) {
             />
             {formData.already_register && (
                 <input
+                    disabled={loading}
                     placeholder={t("form.placeholder.password-repeat")}
                     name={"password_repeat"}
                     type="text"
@@ -55,8 +58,8 @@ export function AuthForm({ onSubmit, formData, onChange }: IProps) {
                 />
             )}
             <button
-                className={style.button}
-                disabled={false}
+                className="btn-secondary"
+                disabled={loading}
             >
                 {t('button.send')}
             </button>
@@ -69,6 +72,7 @@ interface IProps {
     onSubmit: (event: FormEvent<HTMLFormElement>) => void
     onChange: React.Dispatch<React.SetStateAction<IAuthForm>>
     formData: IAuthForm
+    loading: boolean
 }
 
 

@@ -64,7 +64,7 @@
         },
         "form": {
             "placeholder": {
-                "requirements": "How can I find you",
+                "requisites": "How can I find you",
                 "name": "Specify your name",
                 "message": "Specify a message",
                 "city": "Specify the city",
