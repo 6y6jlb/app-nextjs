@@ -1,4 +1,3 @@
-import { LINK_TYPE_ENUM } from '@/config/navigation';
 import { LOCALES } from '@/messages/index';
 import '@/styles/globals.css';
 import "@fortawesome/fontawesome-svg-core/styles.css";
@@ -32,8 +31,8 @@ export default async function RootLayout({
 
   return (
     <html lang={process.env.DEFAULT_LANGUAGE}>
-      <body className={`${inter.className}`}>
-      {children}
+      <body className={inter.className}>
+        {children}
       </body>
     </html>
   )
