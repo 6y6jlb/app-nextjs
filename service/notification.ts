@@ -1,5 +1,6 @@
 import { API } from "@/config/api"
 import { FeedBackForm } from "./types"
+import { throwOnError } from "./error"
 
 export const sendNotification = async (formData: FeedBackForm) => {
     const response = await fetch(API.POST.NOTIFICATION, {
@@ -14,11 +15,7 @@ export const sendNotification = async (formData: FeedBackForm) => {
         }),
     })
 
-    const json = await response.json();
+    await throwOnError(response)
 
-    if (!response.ok) {
-        throw new Error(json.message);
-    }
-
-    return json
+    return await response.json();
 }

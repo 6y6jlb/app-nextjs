@@ -11,7 +11,8 @@
   --footer-height: 50px;
 
   --form-background-disabled: #9b9ba0;
-  --form-color-disabled: rgb(87, 87, 92);
+  --form-color-disabled: #5e696e;
+  --form-color-invalid: #e4487c;
 }
 
 * {

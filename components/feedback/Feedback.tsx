@@ -6,9 +6,11 @@ import { toast } from 'react-toastify';
 import Form from './Form';
 import styles from './styles.module.css';
 import React from 'react';
+import { ErrorType } from '@/config/types';
 
 export default function Fedback() {
   const [loading, setLoading] = React.useState(false)
+  const [errors, setErrors] = React.useState([] as ErrorType[])
 
 
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
@@ -18,28 +20,28 @@ export default function Fedback() {
 
 
     try {
-        const response = await sendNotification({
-            contacts: formData.get('contacts'),
-            name: formData.get('name'),
-            message: formData.get('message')
+      const response = await sendNotification({
+        contacts: formData.get('contacts'),
+        name: formData.get('name'),
+        message: formData.get('message')
 
-        })
-
-
-        toast(response.message, { hideProgressBar: true, type: 'success' })
-
+      })
+      toast(response.message, { hideProgressBar: true, type: 'success' })
     } catch (error: any) {
+      if (error.code === 422) {
         console.log(error)
-        toast(error.message, { hideProgressBar: true, type: 'error' })
+        setErrors(error.errors)
+      }
+      toast(error.message, { hideProgressBar: true, type: 'error' })
     } finally {
       setLoading(false)
     }
 
-}
+  }
 
   return (
     <div className={styles.container}>
-        <Form onSubmit={onSubmit} loading={loading}/>
+      <Form onSubmit={onSubmit} errors={errors} loading={loading} />
     </div>
   )
 }

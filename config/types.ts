@@ -8,4 +8,8 @@ export interface ILink {
 
 export type ILinks = {
     [K in LINK_TYPE_ENUM]?: ILink[];
-  };
+};
+
+export type ErrorType = {
+    [key: string]: string
+}
