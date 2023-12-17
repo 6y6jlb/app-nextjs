@@ -19,11 +19,6 @@
   gap: 20px;
 }
 
-.item {
-  border-radius: 4px;
-  padding: 6px 12px;
-}
-
 .forecasts {
   gap: 2rem;
   display: grid;

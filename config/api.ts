@@ -1,8 +1,8 @@
 export const API = {
     POST: {
         NOTIFICATION: `${process.env.NEXT_PUBLIC_DEFAULT_HOST}/api/notification/email/send`,
-        LOGIN: `${process.env.NEXT_PUBLIC_DEFAULT_HOST}/api/login`,
-        REGISTER: `${process.env.NEXT_PUBLIC_DEFAULT_HOST}/api/register`,
+        LOGIN: `${process.env.NEXT_PUBLIC_DEFAULT_HOST}/api/auth/login`,
+        REGISTER: `${process.env.NEXT_PUBLIC_DEFAULT_HOST}/api/auth/register`,
     },
     GET: {
         REPOS: 'https://api.github.com/users/6y6jlb/repos',

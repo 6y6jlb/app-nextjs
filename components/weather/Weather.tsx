@@ -7,10 +7,12 @@ import { toast } from 'react-toastify'
 import Forecast from '../forecast/Forecast'
 import { WeatherForm } from './Form'
 import styles from './styles.module.css'
+import { ErrorType } from '@/config/types'
 
-export default function Weather () {
+export default function Weather() {
   const [forecasts, setForecasts] = React.useState([] as IWeather[])
   const [loading, setLoading] = React.useState(false)
+  const [errors, setErrors] = React.useState([] as ErrorType[])
 
   const t = useTranslations("common");
   const locale = useLocale()
@@ -25,22 +27,24 @@ export default function Weather () {
       setForecasts([newForecast, ...forecasts])
       toast(t('notification.weather.success'), { hideProgressBar: true, type: 'success' })
     } catch (error: any) {
-      console.log(error)
+      if (error.code === 422) {
+        setErrors(error.errors)
+      }
       toast(t('notification.weather.error'), { hideProgressBar: true, type: 'error' })
     } finally {
-      setTimeout(()=>setLoading(false), 1000)
+      setTimeout(() => setLoading(false), 1000)
     }
   }
 
   const mappedForecasts = React.useMemo(() => forecasts.map((item, index) => {
-    return <Forecast forecast={item} key={index}/>
+    return <Forecast forecast={item} key={index} />
   }), [forecasts]);
 
 
   return (
     <div className={styles.container}>
       <p>{t('weather.description')}</p>
-      <WeatherForm onSubmit={onSubmit} loading={loading}/>
+      <WeatherForm onSubmit={onSubmit} loading={loading} errors={errors} />
       <div className={styles.forecasts}>
         {mappedForecasts}
       </div>
