@@ -1,5 +1,5 @@
 'use client'
-import { ErrorType } from '@/config/types';
+import { Errors } from '@/service/error';
 import { useTranslations } from 'next-intl';
 import { FormEvent } from 'react';
 import FormItem from '../theme/formItem/FormItem';
@@ -11,8 +11,7 @@ export function WeatherForm({ onSubmit, loading, errors }: IProps) {
     return (
 
         <form className={style.form} onSubmit={onSubmit}>
-
-            <FormItem invalid={!!errors.find(el => el['city'])} notification={errors.find(el => el['city'])?.['city']}>
+            <FormItem invalid={errors.has('city')} notification={errors.get('city')}>
                 <input
                     disabled={loading}
                     placeholder={t("form.placeholder.city")}
@@ -20,7 +19,6 @@ export function WeatherForm({ onSubmit, loading, errors }: IProps) {
                     type="text"
                 />
             </FormItem>
-
             <button
                 className="btn-secondary"
                 disabled={loading}
@@ -35,7 +33,7 @@ export function WeatherForm({ onSubmit, loading, errors }: IProps) {
 interface IProps {
     onSubmit: (event: FormEvent<HTMLFormElement>) => void
     loading: boolean
-    errors: ErrorType[]
+    errors: Errors
 }
 
 

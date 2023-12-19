@@ -1,4 +1,4 @@
-import { FormErrorType } from "@/config/types";
+import { ErrorType, FormErrorType } from "@/config/types";
 
 export const throwOnError = async (response: Response) => {
     if (response.ok) {
@@ -40,8 +40,19 @@ export class Errors {
 
     public get(field: string): string | undefined {
         if (this.errors[field]) {
-            return this.errors[field][0];
+            return this.errors[field];
         }
     }
+}
+
+
+export const getFormErrors = (errors: ErrorType[]): FormErrorType => {
+    const resource: FormErrorType = {};
+    errors.forEach(errorObject => {
+        Object.keys(errorObject).forEach(key => {
+            resource[key] = errorObject[key];
+        });
+    });
+    return resource
 }
 

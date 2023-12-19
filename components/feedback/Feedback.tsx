@@ -1,16 +1,15 @@
 'use client'
 
+import { Errors, getFormErrors } from '@/service/error';
 import { sendNotification } from '@/service/notification';
-import { FormEvent } from 'react';
+import React, { FormEvent } from 'react';
 import { toast } from 'react-toastify';
-import Form from './Form';
+import FeedbackForm from './Form';
 import styles from './styles.module.css';
-import React from 'react';
-import { ErrorType } from '@/config/types';
 
 export default function Fedback() {
   const [loading, setLoading] = React.useState(false)
-  const [errors, setErrors] = React.useState([] as ErrorType[])
+  const [errors, setErrors] = React.useState(new Errors())
 
 
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
@@ -29,8 +28,7 @@ export default function Fedback() {
       toast(response.message, { hideProgressBar: true, type: 'success' })
     } catch (error: any) {
       if (error.code === 422) {
-        console.log(error)
-        setErrors(error.errors)
+        setErrors(new Errors(getFormErrors(error.errors)))
       }
       toast(error.message, { hideProgressBar: true, type: 'error' })
     } finally {
@@ -41,7 +39,7 @@ export default function Fedback() {
 
   return (
     <div className={styles.container}>
-      <Form onSubmit={onSubmit} errors={errors} loading={loading} />
+      <FeedbackForm onSubmit={onSubmit} errors={errors} loading={loading} />
     </div>
   )
 }

@@ -1,5 +1,5 @@
 'use client'
-import { ErrorType } from '@/config/types';
+import { Errors } from '@/service/error';
 import { useTranslations } from 'next-intl';
 import { FormEvent } from 'react';
 import FormItem from '../theme/formItem/FormItem';
@@ -12,7 +12,7 @@ export default function FeedbackForm({ onSubmit, loading, errors }: IProps) {
     return (
 
         <form className={style['feedback-form']} onSubmit={onSubmit}>
-            <FormItem invalid={!!errors.find(el => el['name'])} notification={errors.find(el => el['name'])?.['name']}>
+            <FormItem invalid={errors.has('name')} notification={errors.get('name')}>
                 <input
                     disabled={loading}
                     placeholder={t("form.placeholder.name")}
@@ -21,7 +21,7 @@ export default function FeedbackForm({ onSubmit, loading, errors }: IProps) {
                 />
             </FormItem>
 
-            <FormItem invalid={!!errors.find(el => el['contacts'])} notification={errors.find(el => el['contacts'])?.['contacts']}>
+            <FormItem invalid={errors.has('contacts')} notification={errors.get('contacts')}>
                 <input
                     disabled={loading}
                     placeholder={t("form.placeholder.requisites")}
@@ -30,7 +30,7 @@ export default function FeedbackForm({ onSubmit, loading, errors }: IProps) {
                 />
             </FormItem>
 
-            <FormItem invalid={!!errors.find(el => el['message'])} notification={errors.find(el => el['message'])?.['message']}>
+            <FormItem invalid={errors.has('message')} notification={errors.get('message')}>
                 <textarea
                     disabled={loading}
                     placeholder={t("form.placeholder.message")}
@@ -52,7 +52,7 @@ export default function FeedbackForm({ onSubmit, loading, errors }: IProps) {
 
 interface IProps {
     onSubmit: (event: FormEvent<HTMLFormElement>) => void
-    errors: ErrorType[]
+    errors: Errors
     loading: boolean
 }
 

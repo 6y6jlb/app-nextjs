@@ -68,12 +68,21 @@
                 "name": "вкажіть своє ім'я",
                 "message": "вкажи повідомлення",
                 "city": "вкажи місто",
+                "email": "вкажи eMail",
+                "telegram_id": "вкажи telegram id",
                 "login": "вкажи логін",
                 "password": "вкажи пароль",
                 "password-repeat": "Повтори пароль"
             },
             "label": {
-                "register-already": "вже зареєстровано"
+                "register-already": "вже зареєстровано",
+                "enter-by": "вхід через"
+            }
+        },
+        "enums": {
+            "entry_type": {
+                "telegram_id": "Телеграм айді",
+                "email": "EMail"
             }
         }
     }

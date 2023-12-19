@@ -1,11 +1,10 @@
 'use client'
 import { auth } from '@/service/auth'
-import { Errors } from '@/service/error'
-import useFormErrors from '@/service/hooks/useFormErrors'
+import { Errors, getFormErrors } from '@/service/error'
 import { useLocale, useTranslations } from 'next-intl'
 import React, { FormEvent } from 'react'
 import { toast } from 'react-toastify'
-import { Form } from './Form'
+import { AuthForm } from './Form'
 import { DEFAULT_AUTH_FORM } from './const'
 import styles from './styles.module.css'
 import { IAuthForm } from './types'
@@ -28,8 +27,7 @@ export default function Auth() {
       toast(t('notification.auth.success'), { hideProgressBar: true, type: 'success' })
     } catch (error: any) {
       if (error.code === 422) {
-        const temp = useFormErrors(error.errors);
-        setErrors(new Errors(useFormErrors(error.errors)))
+        setErrors(new Errors(getFormErrors(error.errors)))
       }
       toast(t('notification.auth.error'), { hideProgressBar: true, type: 'error' })
     } finally {
@@ -40,7 +38,7 @@ export default function Auth() {
   return (
     <div className={styles.container}>
       <p>{t(form.already_register ? 'auth.description-login' : 'auth.description-register')}</p>
-      <Form onSubmit={onSubmit} formData={form} onChange={setForm} loading={loading} errors={errors} />
+      <AuthForm onSubmit={onSubmit} formData={form} onChange={setForm} loading={loading} errors={errors} />
     </div>
   )
 }

@@ -68,12 +68,21 @@
                 "name": "Specify your name",
                 "message": "Specify a message",
                 "city": "Specify the city",
+                "email": "Enter the eMail",
+                "telegram_id": "Enter the telegram id",
                 "login": "Enter your username",
                 "password": "Enter the password",
                 "password-repeat": "Repeat the password"
             },
             "label": {
-                "register-already": "Already registered"
+                "register-already": "Already registered",
+                "enter-by": "Login via"
+            }
+        },
+        "enums": {
+            "entry_type": {
+                "telegram_id": "Telegram ID",
+                "email": "EMail"
             }
         }
     }

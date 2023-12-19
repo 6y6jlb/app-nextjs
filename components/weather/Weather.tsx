@@ -1,4 +1,5 @@
 'use client'
+import { Errors, getFormErrors } from '@/service/error'
 import { IWeather } from '@/service/types'
 import { getWeather } from '@/service/weather'
 import { useLocale, useTranslations } from 'next-intl'
@@ -7,12 +8,11 @@ import { toast } from 'react-toastify'
 import Forecast from '../forecast/Forecast'
 import { WeatherForm } from './Form'
 import styles from './styles.module.css'
-import { ErrorType } from '@/config/types'
 
 export default function Weather() {
   const [forecasts, setForecasts] = React.useState([] as IWeather[])
   const [loading, setLoading] = React.useState(false)
-  const [errors, setErrors] = React.useState([] as ErrorType[])
+  const [errors, setErrors] = React.useState(new Errors())
 
   const t = useTranslations("common");
   const locale = useLocale()
@@ -28,7 +28,7 @@ export default function Weather() {
       toast(t('notification.weather.success'), { hideProgressBar: true, type: 'success' })
     } catch (error: any) {
       if (error.code === 422) {
-        setErrors(error.errors)
+        setErrors(new Errors(getFormErrors(error.errors)))
       }
       toast(t('notification.weather.error'), { hideProgressBar: true, type: 'error' })
     } finally {
