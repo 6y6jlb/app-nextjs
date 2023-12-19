@@ -1,10 +1,10 @@
 'use client'
+import { Errors } from '@/service/error';
 import { useTranslations } from 'next-intl';
 import { ChangeEvent, FormEvent } from 'react';
+import FormItem from '../theme/formItem/FormItem';
 import style from "./styles.module.css";
 import { IAuthForm } from './types';
-import FormItem from '../theme/formItem/FormItem';
-import { ErrorType } from '@/config/types';
 
 export function Form({ onSubmit, formData, onChange, loading, errors }: IProps) {
     const t = useTranslations("common");
@@ -16,11 +16,10 @@ export function Form({ onSubmit, formData, onChange, loading, errors }: IProps) 
         }
         onChange({ ...formData, [fieldName]: value });
     };
-    console.log(errors)
 
     return (
         <form className={style.form} onSubmit={onSubmit}>
-            <FormItem invalid={!!errors.find(el => el['already_register'])} notification={errors.find(el => el['already_register'])?.['already_register']}>
+            <FormItem invalid={errors.has('already_register')} notification={errors.get('already_register')}>
                 <div className={style.radio}>
                     <label htmlFor="auth">{t('form.label.register-already')}</label>
                     <input
@@ -33,7 +32,7 @@ export function Form({ onSubmit, formData, onChange, loading, errors }: IProps) 
                 </div>
             </FormItem>
 
-            <FormItem invalid={!!errors.find(el => el['login'])} notification={errors.find(el => el['login'])?.['login']}>
+            <FormItem invalid={!!errors.has('login')} notification={errors.get('login')}>
                 <input
                     disabled={loading}
                     placeholder={t("form.placeholder.login")}
@@ -45,7 +44,7 @@ export function Form({ onSubmit, formData, onChange, loading, errors }: IProps) 
             </FormItem>
 
 
-            <FormItem invalid={!!errors.find(el => el['password'])} notification={errors.find(el => el['password'])?.['password']}>
+            <FormItem invalid={!!errors.has('password')} notification={errors.get('password')}>
                 <input
                     disabled={loading}
                     placeholder={t("form.placeholder.password")}
@@ -57,7 +56,7 @@ export function Form({ onSubmit, formData, onChange, loading, errors }: IProps) 
             </FormItem>
 
             {!formData.already_register && (
-                <FormItem invalid={!!errors.find(el => el['password_repeat'])} notification={errors.find(el => el['password_repeat'])?.['password_repeat']}>
+                <FormItem invalid={!!errors.has('password_repeat')} notification={errors.get('password_repeat')}>
                     <input
                         disabled={loading}
                         placeholder={t("form.placeholder.password-repeat")}
@@ -85,7 +84,7 @@ interface IProps {
     onChange: React.Dispatch<React.SetStateAction<IAuthForm>>
     formData: IAuthForm
     loading: boolean
-    errors: ErrorType[]
+    errors: Errors
 }
 
 

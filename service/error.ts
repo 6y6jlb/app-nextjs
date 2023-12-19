@@ -1,3 +1,5 @@
+import { FormErrorType } from "@/config/types";
+
 export const throwOnError = async (response: Response) => {
     if (response.ok) {
         return;
@@ -18,3 +20,28 @@ export const throwOnError = async (response: Response) => {
 
     throw error;
 };
+
+
+export class Errors {
+    private errors: FormErrorType;
+
+    constructor(errors?: FormErrorType) {
+        this.errors = errors || {};
+    }
+
+    public has(field: string): boolean {
+        return Object.prototype.hasOwnProperty.call(this.errors, field);
+    }
+
+    public any(): boolean {
+        return Object.keys(this.errors).length > 0;
+    }
+
+
+    public get(field: string): string | undefined {
+        if (this.errors[field]) {
+            return this.errors[field][0];
+        }
+    }
+}
+

@@ -13,3 +13,7 @@ export type ILinks = {
 export type ErrorType = {
     [key: string]: string
 }
+
+export type FormErrorType = {
+    [key: string]: string
+}
