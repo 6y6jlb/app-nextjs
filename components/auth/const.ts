@@ -9,6 +9,6 @@ export const DEFAULT_AUTH_FORM = {
     entry_type: ENTRY_TYPE_ENUM.EMAIL,
     password: '',
     password_repeat: '',
-    already_register: false,
+    already_register: true,
 };
 

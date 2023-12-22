@@ -5,7 +5,8 @@
 
   --background-main-black: #222223;
   --background-main-white: #dcdcdc;
-  --background-transparent-white: rgba(252, 252, 237, 0.55);
+  --background-transparent-white: #dcdcdc6c;
+  --background-transparent-black: #2222234f;
 
   --header-height: 50px;
   --footer-height: 50px;
@@ -121,4 +122,11 @@ textarea:disabled {
 .btn-secondary {
   background-color: var(--text-main-white);
   color: var(--background-main-black);
+}
+
+.background-face {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url(/assets/images/face.png);
 }

@@ -22,8 +22,14 @@
 .radio {
   display: flex;
   justify-content: space-between;
+  background-color: var(--background-transparent-black);
+}
+
+.radio>* {
+  cursor: pointer;
 }
 
 .select {
   color: var(--text-main-white);
+  background-color: var(--background-transparent-black);
 }

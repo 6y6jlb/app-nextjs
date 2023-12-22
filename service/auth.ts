@@ -1,7 +1,7 @@
-import { API } from "@/config/api";
-import { AuthForm, AuthPayload, LoginPayload, RegisterPayload } from "./types";
-import { throwOnError } from "./error";
 import { ENTRY_TYPE_ENUM } from "@/components/auth/const";
+import { API } from "@/config/api";
+import { throwOnError } from "./error";
+import { AuthForm, LoginPayload, RegisterPayload } from "./types";
 
 export const auth = async (formData: AuthForm): Promise<any> => {
 

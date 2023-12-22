@@ -35,10 +35,11 @@ export function AuthForm({ onSubmit, formData, onChange, loading, errors }: IPro
         <form className={style.form} onSubmit={onSubmit}>
             <FormItem invalid={errors.has('already_register')} notification={errors.get('already_register')}>
                 <div className={style.radio}>
-                    <label htmlFor="auth">{t('form.label.register-already')}</label>
+                    <label htmlFor="already_register">{t('form.label.register-already')}</label>
                     <input
                         disabled={loading}
                         name="already_register"
+                        id="already_register"
                         type="checkbox"
                         checked={formData.already_register}
                         onChange={fieldHandler('already_register')}

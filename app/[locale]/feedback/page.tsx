@@ -6,7 +6,7 @@ export default async function Page() {
 
 
     return (
-        <main className={style.main}>
+        <main className={`${style.main} background-face`}>
             <Feedback />
         </main>
     )

@@ -3,7 +3,7 @@ import { useTranslations } from "next-intl";
 import style from "./styles.module.css";
 import { useRouter } from "next/navigation";
 
-const Portfolio = () => {
+const Greeting = () => {
 	const t = useTranslations("common");
 	const router = useRouter();
 
@@ -13,7 +13,7 @@ const Portfolio = () => {
 
 
 	return (
-		<div id={"common"} className={style.main}>
+		<div id={"common"} className={`${style.main} background-face`}>
 			<div className={`main-container ${style.container}`}>
 				<p className={style.description}>{t('main.description')}</p>
 				<p className={style.typing}>{t('typing.i')} {t('typing.frontend')}/ {t('typing.backend')}/ {t('typing.fullstack')} {t('typing.developer')}</p>
@@ -22,4 +22,4 @@ const Portfolio = () => {
 		</div>
 	)
 }
-export default Portfolio
+export default Greeting
