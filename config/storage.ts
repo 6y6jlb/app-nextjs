@@ -1,5 +1,6 @@
 
-export const LS = {
-    PRESELECTED_LANGUAGE: 'preselected_language',
-    PROJECT_LANGUAGES: 'project_languages',
+export enum STORAGE_KEYS_ENUM {
+    PRESELECTED_LANGUAGE = 'preselected_language',
+    PROJECT_LANGUAGES = 'project_languages',
+    JWT_ACCESS_TOKEN = 'access_token'
 }

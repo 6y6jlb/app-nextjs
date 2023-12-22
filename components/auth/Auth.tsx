@@ -22,7 +22,7 @@ export default function Auth() {
     event.preventDefault()
 
     try {
-      const result = await auth({ ...form, locale });
+      await auth({ ...form, locale });
       setForm(DEFAULT_AUTH_FORM)
       toast(t('notification.auth.success'), { hideProgressBar: true, type: 'success' })
     } catch (error: any) {
