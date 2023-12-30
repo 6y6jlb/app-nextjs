@@ -1,9 +1,10 @@
 import { ENTRY_TYPE_ENUM } from "@/components/auth/const";
 import { API } from "@/config/api";
+import { STORAGE_KEYS_ENUM } from "@/config/storage";
 import { throwOnError } from "./error";
 import { AuthForm, AuthResponse, LoginPayload, RegisterPayload } from "./types";
-import { STORAGE_KEYS_ENUM } from "@/config/storage";
-import ls from "./ls";
+import cookies from "./cookies";
+
 
 export const auth = async (formData: AuthForm): Promise<AuthResponse> => {
 
@@ -20,7 +21,7 @@ export const auth = async (formData: AuthForm): Promise<AuthResponse> => {
 
     const { access_token } = await response.json()
 
-    ls.set(STORAGE_KEYS_ENUM.JWT_ACCESS_TOKEN, access_token)
+    cookies.set(STORAGE_KEYS_ENUM.JWT_ACCESS_TOKEN, access_token)
 
     return { access_token };
 }
@@ -53,6 +54,3 @@ const getRegisterPayload = (formData: AuthForm): RegisterPayload => {
 }
 
 
-export const getAccessToken = () => {
-    return ls.get(STORAGE_KEYS_ENUM.JWT_ACCESS_TOKEN) ?? null
-}

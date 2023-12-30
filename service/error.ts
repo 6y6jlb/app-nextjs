@@ -6,6 +6,7 @@ export const throwOnError = async (response: Response) => {
     }
 
     // todo: handle JSON parse errors
+
     const json = await response.json();
 
     const responseError = {

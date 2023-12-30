@@ -8,11 +8,13 @@ import { AuthForm } from './Form'
 import { DEFAULT_AUTH_FORM } from './const'
 import styles from './styles.module.css'
 import { IAuthForm } from './types'
+import { useRouter } from "next/navigation";
 
 export default function Auth() {
   const [form, setForm] = React.useState(DEFAULT_AUTH_FORM as IAuthForm)
   const [loading, setLoading] = React.useState(false)
   const [errors, setErrors] = React.useState(new Errors())
+  const router = useRouter()
 
   const t = useTranslations("common");
   const locale = useLocale()
@@ -25,6 +27,7 @@ export default function Auth() {
       await auth({ ...form, locale });
       setForm(DEFAULT_AUTH_FORM)
       toast(t('notification.auth.success'), { hideProgressBar: true, type: 'success' })
+      router.push('/profile')
     } catch (error: any) {
       if (error.code === 422) {
         setErrors(new Errors(getFormErrors(error.errors)))

@@ -13,6 +13,7 @@ export default async function SneakyLayout({
   try {
     //@ts-ignore
     messages = (await import(`@/messages/${LOCALES[locale]}.json`)).default;
+
   } catch (error) {
 
     notFound();

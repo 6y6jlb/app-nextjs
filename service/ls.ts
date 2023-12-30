@@ -2,7 +2,6 @@ import { STORAGE_KEYS_ENUM } from "@/config/storage";
 
 class LS {
     public set(key: STORAGE_KEYS_ENUM, value: any) {
-        console.dir(key, value)
         localStorage.setItem(key, JSON.stringify(value))
     }
 

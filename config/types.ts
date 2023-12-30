@@ -1,9 +1,10 @@
-import { LINK_TYPE_ENUM, PATH_TYPE_ENUM } from "./navigation";
+import { LINK_TYPE_ENUM, PATH_TYPE_ENUM, PRIVACY_TYPE_ENUM } from "./navigation";
 
 export interface ILink {
     path: string,
     type: PATH_TYPE_ENUM,
-    title: string
+    title: string,
+    privacy_type: PRIVACY_TYPE_ENUM,
 }
 
 export type ILinks = {

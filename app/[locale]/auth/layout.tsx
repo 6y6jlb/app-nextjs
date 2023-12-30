@@ -12,7 +12,7 @@ export default async function Layout({
 
   return (
     <RootLayout params={{ locale }}>
-      <SneakyLayout params={{ locale, type: LINK_TYPE_ENUM.SNEAKY_PUBLIC }}>
+      <SneakyLayout params={{ locale, type: LINK_TYPE_ENUM.SNEAKY }}>
         {children}
       </SneakyLayout>
     </RootLayout>
