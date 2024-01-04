@@ -3,7 +3,7 @@ import { API } from "@/config/api";
 import { STORAGE_KEYS_ENUM } from "@/config/storage";
 import { throwOnError } from "./error";
 import { AuthForm, AuthResponse, LoginPayload, RegisterPayload } from "./types";
-import cookies from "./cookies";
+import cookies from "@/service/cookies";
 
 
 export const auth = async (formData: AuthForm): Promise<AuthResponse> => {

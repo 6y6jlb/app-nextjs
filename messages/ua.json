@@ -62,6 +62,15 @@
             "description-login": "вхід в систему",
             "description-register": "реєстрація в системі"
         },
+        "profile": {
+            "title": "Профіль",
+            "telegram_id": "Телеграм айді",
+            "name": "Ім'я",
+            "email": "Емейл",
+            "created_at": "Дата реєстрації",
+            "currency": "Бажана валюта",
+            "locale": "Локаль"
+        },
         "form": {
             "placeholder": {
                 "requisites": "як тебе можна знайти",

@@ -10,11 +10,9 @@ const Header = async ({ linkType }: IProps) => {
 
 	const user = await getMe();
 
-	const permissions = [PRIVACY_TYPE_ENUM.PUBLIC]
+	const permissions = [PRIVACY_TYPE_ENUM.ALL]
 
-	if (user) {
-		permissions.push(PRIVACY_TYPE_ENUM.PRIVATE)
-	}
+	permissions.push(user ? PRIVACY_TYPE_ENUM.PRIVATE : PRIVACY_TYPE_ENUM.PUBLIC)
 
 	const links = LINKS[linkType]?.filter(link => permissions.includes(link.privacy_type)) as ILink[]
 

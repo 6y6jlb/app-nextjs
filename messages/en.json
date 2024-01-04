@@ -62,6 +62,15 @@
             "description-login": "Login",
             "description-register": "Registration in the system"
         },
+        "profile": {
+            "title": "Profile",
+            "telegram_id": "Telegram id",
+            "name": "Name",
+            "email": "Email",
+            "created_at": "Registration date",
+            "currency": "Preferred currency",
+            "locale": "Locale"
+        },
         "form": {
             "placeholder": {
                 "requisites": "How can I find you",
