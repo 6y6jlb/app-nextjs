@@ -100,3 +100,16 @@ export type LoginPayload = Pick<AuthForm, 'password'> & {
 export type AuthResponse = {
     access_token: string
 }
+
+export type User = {
+    telegram_id?: number | string,
+    email?: string,
+    created_at: Date,
+    name: string,
+    tz?: string,
+    location?: string,
+    currency?: string,
+    locale?: string,
+    hash?: string,
+    salt?: string
+}

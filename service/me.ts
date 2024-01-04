@@ -1,8 +1,9 @@
 import { API } from "@/config/api";
 import { STORAGE_KEYS_ENUM } from "@/config/storage";
 import { throwOnError } from "./error";
+import { User } from "./types";
 
-export const getMe = async (): Promise<any> => {
+export const getMe = async (): Promise<User | undefined> => {
 
     try {
         let token;
@@ -23,7 +24,7 @@ export const getMe = async (): Promise<any> => {
             throw new Error('Invalid token')
         }
 
-        const response = await fetch(API.GET.USERS, {
+        const response = await fetch(API.GET.ME, {
             method: 'GET',
             headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
         })

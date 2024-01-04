@@ -2,6 +2,7 @@ import { useTranslations } from 'next-intl';
 import React from 'react'
 import styles from './styles.module.css'
 import moment from 'moment';
+import { User } from '@/service/types';
 
 const Properties = ({ user }: Props) => {
 
@@ -21,5 +22,5 @@ const Properties = ({ user }: Props) => {
 export default Properties
 
 type Props = {
-    user: any
+    user: User
 }

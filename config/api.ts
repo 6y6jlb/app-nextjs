@@ -10,5 +10,6 @@ export const API = {
         LANG: 'https://api.github.com/repos/6y6jlb', //https://api.github.com/repos/6y6jlb/{REPO_NAME}/language
         WEATHER: `${process.env.NEXT_PUBLIC_DEFAULT_HOST}/api/weather`,
         USERS: `${process.env.NEXT_PUBLIC_DEFAULT_HOST}/api/users`,
+        ME: `${process.env.NEXT_PUBLIC_DEFAULT_HOST}/api/me`,
     }
 }
