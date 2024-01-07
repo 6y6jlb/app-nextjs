@@ -1,0 +1,5 @@
+export enum EVENT_ENUM {
+    WEATHER = "WEATHER",
+    REMINDER = "REMINDER",
+    EXCHANGE = "EXCHANGE"
+}

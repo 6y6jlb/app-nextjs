@@ -5,9 +5,10 @@ import { getWeather } from '@/service/weather'
 import { useLocale, useTranslations } from 'next-intl'
 import React, { FormEvent } from 'react'
 import { toast } from 'react-toastify'
-import Forecast from '../forecast/Forecast'
 import { WeatherForm } from './Form'
 import styles from './styles.module.css'
+import Forecast from './forecast/Forecast'
+import Title from '../theme/title/Title'
 
 export default function Weather() {
   const [forecasts, setForecasts] = React.useState([] as IWeather[])
@@ -43,6 +44,7 @@ export default function Weather() {
 
   return (
     <div className={styles.container}>
+      <Title title-key={'weather.title'} />
       <p>{t('weather.description')}</p>
       <WeatherForm onSubmit={onSubmit} loading={loading} errors={errors} />
       <div className={styles.forecasts}>

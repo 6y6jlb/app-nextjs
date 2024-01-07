@@ -42,6 +42,7 @@
             "contact-us": "contact us directly"
         },
         "weather": {
+            "title": "Weather",
             "description": "Here you can find out the weather. To do this, enter the name of the city and click.",
             "place": "Place",
             "temperature": "Temperature",
@@ -70,6 +71,17 @@
             "created_at": "Registration date",
             "currency": "Preferred currency",
             "locale": "Locale"
+        },
+        "tasks": {
+            "title": "Tasks",
+            "empty": "Tasks are missing",
+            "call_at": "Execution time",
+            "timezone": "timezone",
+            "user_id": "User",
+            "once": "One time",
+            "waiting": "On schedule",
+            "regular": "Regular task",
+            "queue": "In queue"
         },
         "form": {
             "placeholder": {

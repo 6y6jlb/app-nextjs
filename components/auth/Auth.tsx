@@ -9,6 +9,7 @@ import { DEFAULT_AUTH_FORM } from './const'
 import styles from './styles.module.css'
 import { IAuthForm } from './types'
 import { useRouter } from "next/navigation";
+import Title from '../theme/title/Title'
 
 export default function Auth() {
   const [form, setForm] = React.useState(DEFAULT_AUTH_FORM as IAuthForm)
@@ -41,7 +42,7 @@ export default function Auth() {
 
   return (
     <div className={styles.container}>
-      <p>{t(form.already_register ? 'auth.description-login' : 'auth.description-register')}</p>
+      <Title title-key={form.already_register ? 'auth.description-login' : 'auth.description-register'} />
       <AuthForm onSubmit={onSubmit} formData={form} onChange={setForm} loading={loading} errors={errors} />
     </div>
   )

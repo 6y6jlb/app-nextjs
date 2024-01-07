@@ -3,7 +3,6 @@ export const API = {
         NOTIFICATION: `${process.env.NEXT_PUBLIC_DEFAULT_HOST}/api/notification/email/send`,
         LOGIN: `${process.env.NEXT_PUBLIC_DEFAULT_HOST}/api/auth/login`,
         REGISTER: `${process.env.NEXT_PUBLIC_DEFAULT_HOST}/api/auth/register`,
-        users: `${process.env.NEXT_PUBLIC_DEFAULT_HOST}/api/auth/register`,
     },
     GET: {
         REPOS: 'https://api.github.com/users/6y6jlb/repos',
@@ -11,5 +10,6 @@ export const API = {
         WEATHER: `${process.env.NEXT_PUBLIC_DEFAULT_HOST}/api/weather`,
         USERS: `${process.env.NEXT_PUBLIC_DEFAULT_HOST}/api/users`,
         ME: `${process.env.NEXT_PUBLIC_DEFAULT_HOST}/api/me`,
+        TASKS: `${process.env.NEXT_PUBLIC_DEFAULT_HOST}/api/tasks`,
     }
 }

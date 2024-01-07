@@ -1,5 +1,6 @@
 import { OPEN_WEATHER_UNITS } from "@/config/weather";
 import { IAuthForm as IAuthFormClient } from '../components/auth/types';
+import { EVENT_ENUM } from "./const";
 
 export type Repos = {
     timestamp: string | null | undefined;
@@ -102,6 +103,7 @@ export type AuthResponse = {
 }
 
 export type User = {
+    _id: string,
     telegram_id?: number | string,
     email?: string,
     created_at: Date,
@@ -112,4 +114,21 @@ export type User = {
     locale?: string,
     hash?: string,
     salt?: string
+}
+
+export interface IOption {
+    event_type: EVENT_ENUM,
+    param: string
+}
+
+
+export type Task = {
+    _id: string,
+    last_call?: Date,
+    user_id: number | string,
+    options: Array<IOption>,
+    call_at: string,
+    queue?: boolean,
+    tz: string,
+    is_regular: boolean,
 }
