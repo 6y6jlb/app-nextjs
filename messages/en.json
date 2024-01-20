@@ -39,7 +39,9 @@
         "button": {
             "save": "save",
             "send": "send",
-            "contact-us": "contact us directly"
+            "contact-us": "contact us directly",
+            "task-create-first": "Create the first task",
+            "task-create-another": "Create"
         },
         "weather": {
             "title": "Weather",
@@ -81,7 +83,8 @@
             "once": "One time",
             "waiting": "On schedule",
             "regular": "Regular task",
-            "queue": "In queue"
+            "queue": "In queue",
+            "create-description": "дозволяє створити завдання в телеграм, які будуть виконуватися за розкладом. Види завдань-Погода, обмінний курс, нагадування."
         },
         "form": {
             "placeholder": {
@@ -105,6 +108,9 @@
                 "telegram_id": "Telegram ID",
                 "email": "EMail"
             }
+        },
+        "alert": {
+            "telegram-does-not-exist": "Telegram is missing."
         }
     }
 }

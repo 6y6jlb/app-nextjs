@@ -1,25 +1,20 @@
 'use client'
 import { useTranslations } from 'next-intl';
-import styles from "./styles.module.css"
 import { useEffect, useRef } from 'react';
+import styles from "./styles.module.css";
 
 
-
-interface ITitle {
-  'title-key': string;
-}
-
-const Title = ({ 'title-key': titleKey}: ITitle) => {
+const Title = ({ 'title-key': titleKey }: IProps) => {
   const t = useTranslations("common");
 
   const divRef = useRef(null);
 
   useEffect(() => {
     const current: any = divRef.current
-  
-    if(typeof window !== "undefined" && current) {
+
+    if (typeof window !== "undefined" && current) {
       const computedColor = window.getComputedStyle(current).color;
-      current.style.setProperty('--parent-color',computedColor ?? 'transparent');
+      current.style.setProperty('--parent-color', computedColor ?? 'transparent');
     }
 
   }, []);
@@ -31,3 +26,8 @@ const Title = ({ 'title-key': titleKey}: ITitle) => {
   )
 }
 export default Title;
+
+
+interface IProps {
+  'title-key': string;
+}

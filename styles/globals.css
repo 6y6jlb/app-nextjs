@@ -14,6 +14,9 @@
   --form-background-disabled: #9b9ba0;
   --form-color-disabled: #5e696e;
   --form-color-invalid: #e4487c;
+
+  --alert-warning-color: #6e153a;
+  --alert-warning-background: #c78da5;
 }
 
 * {
@@ -129,4 +132,16 @@ textarea:disabled {
   background-size: cover;
   background-repeat: no-repeat;
   background-image: url(/assets/images/face.png);
+}
+
+.alert {
+  padding: 2rem;
+  border-radius: 8px;
+  border: 1px solid var(--form-background-disabled);
+}
+
+.alert-warning {
+  color: var(--alert-warning-color);
+  border-color: var(--alert-warning-color);
+  background-color: var(--alert-warning-background);
 }

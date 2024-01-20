@@ -11,7 +11,7 @@ const TasksList = ({ tasks }: Props) => {
 
     const t = useTranslations("common");
 
-    if (!tasks) {
+    if (!(tasks && tasks.length)) {
         return (
             <div>{t('tasks.empty')}</div>
         )
