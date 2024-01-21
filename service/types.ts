@@ -132,3 +132,5 @@ export type Task = {
     tz: string,
     is_regular: boolean,
 }
+
+export type UserForm = Pick<User, "telegram_id" | "email" | "name" | "currency" | "locale">

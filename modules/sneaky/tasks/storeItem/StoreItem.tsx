@@ -2,7 +2,7 @@ import { useTranslations } from 'next-intl';
 import React from 'react'
 import styles from './styles.module.css'
 
-const StoreItemButton = ({ notCreatedYet: notCreateYet = false, hasTelegramId }: Props) => {
+const StoreItem = ({ notCreatedYet: notCreateYet = false, hasTelegramId }: Props) => {
     const t = useTranslations("common");
     return (
         <div className={styles.container}>
@@ -13,13 +13,19 @@ const StoreItemButton = ({ notCreatedYet: notCreateYet = false, hasTelegramId }:
                 {t(notCreateYet ? 'button.task-create-first' : 'button.task-create-another')}
             </button>
             {
-                !hasTelegramId && <p className="alert alert-warning">{t('alert.telegram-does-not-exist')}</p>
-            }
+                !hasTelegramId && <>
+                    <p className="alert alert-warning">{t('alert.telegram-does-not-exist')}</p>
+                    <button className="btn-primary" onClick={(e) => {
+                        location.assign('/profile/update')
+                    }}>
+                        {t('button.update-data')}
+                    </button>
+                </>}
         </div>
     )
 }
 
-export default StoreItemButton
+export default StoreItem
 
 type Props = {
     notCreatedYet: boolean,

@@ -1,8 +1,8 @@
-import { getMe } from '@/service/me'
-import styles from './styles.module.css'
-import Properties from './Properties';
-import { redirect } from 'next/navigation';
 import Title from '@/modules/common/theme/title/Title';
+import { getMe } from '@/service/me';
+import { redirect } from 'next/navigation';
+import Content from './content/Content';
+import styles from './styles.module.css';
 
 const Profile = async () => {
 
@@ -14,7 +14,7 @@ const Profile = async () => {
   return (
     <div className={styles.container}>
       <Title title-key='profile.title' />
-      <Properties user={user} />
+      <Content user={user} />
     </div>
   )
 }

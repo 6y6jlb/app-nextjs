@@ -41,7 +41,10 @@
             "send": "send",
             "contact-us": "contact us directly",
             "task-create-first": "Create the first task",
-            "task-create-another": "Create"
+            "task-create-another": "Create",
+            "update-data": "Edit information",
+            "edit": "Edit",
+            "cancel": "Cancel"
         },
         "weather": {
             "title": "Weather",
@@ -58,6 +61,10 @@
             },
             "auth": {
                 "success": "Login completed",
+                "error": "An error has occurred, try again later"
+            },
+            "profile-update": {
+                "success": "Profile has been successfully updated",
                 "error": "An error has occurred, try again later"
             }
         },
@@ -96,6 +103,8 @@
                 "telegram_id": "Enter the telegram id",
                 "login": "Enter your username",
                 "password": "Enter the password",
+                "currency": "Specify the currency",
+                "language": "Specify the language",
                 "password-repeat": "Repeat the password"
             },
             "label": {

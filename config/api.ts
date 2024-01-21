@@ -11,5 +11,8 @@ export const API = {
         USERS: `${process.env.NEXT_PUBLIC_DEFAULT_HOST}/api/users`,
         ME: `${process.env.NEXT_PUBLIC_DEFAULT_HOST}/api/me`,
         TASKS: `${process.env.NEXT_PUBLIC_DEFAULT_HOST}/api/tasks`,
+    },
+    PUT: {
+        ME: `${process.env.NEXT_PUBLIC_DEFAULT_HOST}/api/me`
     }
 }

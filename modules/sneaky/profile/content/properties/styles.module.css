@@ -1,0 +1,17 @@
+.properties {
+  display: grid;
+  grid-template-columns: minmax(300px, 100%);
+  grid-template-rows: auto;
+  align-self: self-start;
+  gap: 20px;
+}
+
+.properties>div {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.properties>div>:first-child {
+  font-weight: 800;
+}

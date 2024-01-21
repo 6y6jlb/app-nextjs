@@ -41,7 +41,10 @@
             "send": "отправить",
             "contact-us": "связаться на прямую",
             "task-create-first": "Создать первую задачу",
-            "task-create-another": "Создать"
+            "task-create-another": "Создать",
+            "update-data": "Редактировать информацию",
+            "edit": "Редактировать",
+            "cancel": "Отмена"
         },
         "weather": {
             "title": "Погода",
@@ -62,6 +65,10 @@
             },
             "auth": {
                 "success": "Вход выполен",
+                "error": "Произошла ошибка, попробуйте позже"
+            },
+            "profile-update": {
+                "success": "Профайл успешно обновлен",
                 "error": "Произошла ошибка, попробуйте позже"
             }
         },
@@ -96,6 +103,8 @@
                 "telegram_id": "Укажи telegram id",
                 "login": "Укажи логин",
                 "password": "Укажи пароль",
+                "currency": "Укажи валюту",
+                "language": "Укажи язык",
                 "password-repeat": "Повтори пароль"
             },
             "label": {
