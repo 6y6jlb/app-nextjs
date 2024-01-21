@@ -84,7 +84,7 @@
             "waiting": "On schedule",
             "regular": "Regular task",
             "queue": "In queue",
-            "create-description": "дозволяє створити завдання в телеграм, які будуть виконуватися за розкладом. Види завдань-Погода, обмінний курс, нагадування."
+            "create-description": "You are allowed to send messages to the telegram, and you will be invited to follow the message. Types of zavdan-Weather, exchange rate, nagaduvannya."
         },
         "form": {
             "placeholder": {
