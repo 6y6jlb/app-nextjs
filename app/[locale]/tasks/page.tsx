@@ -1,5 +1,5 @@
 'use client'
-import Tasks from "@/components/tasks/Tasks";
+import Tasks from "@/modules/sneaky/tasks/Tasks";
 import style from "./styles.module.css";
 
 export default async function Page() {

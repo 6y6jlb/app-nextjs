@@ -9,7 +9,7 @@ import { DEFAULT_AUTH_FORM } from './const'
 import styles from './styles.module.css'
 import { IAuthForm } from './types'
 import { useRouter } from "next/navigation";
-import Title from '../theme/title/Title'
+import Title from '@/modules/common/theme/title/Title'
 
 export default function Auth() {
   const [form, setForm] = React.useState(DEFAULT_AUTH_FORM as IAuthForm)

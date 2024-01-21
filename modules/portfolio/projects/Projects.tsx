@@ -2,9 +2,9 @@
 import { useState } from "react"
 import { Audio } from "react-loader-spinner"
 import ProjectItem from "./projectItem/ProjectItem"
-import Title from "../theme/title/Title"
 import style from "./styles.module.css"
 import { ReposData } from "@/service/types"
+import Title from "@/modules/common/theme/title/Title"
 
 export default function Projects({ projects }: IProps) {
 	const [activeRepoName, setActiveRepoName] = useState('')

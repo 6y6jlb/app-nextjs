@@ -1,4 +1,4 @@
-import { ENTRY_TYPE_ENUM } from "@/components/auth/const";
+import { ENTRY_TYPE_ENUM } from "@/modules/sneaky/auth/const";
 import { API } from "@/config/api";
 import { STORAGE_KEYS_ENUM } from "@/config/storage";
 import { throwOnError } from "./error";

@@ -1,8 +1,8 @@
-import Contacts from "@/components/contacts/Contacts";
-import Languages from "@/components/languages/Languages";
-import Greeting from "@/components/greeting/Greeting";
-import Projects from "@/components/projects/Projects";
-import RemoteJob from "@/components/remoteJob/RemoteJob";
+import Contacts from "@/modules/portfolio/contacts/Contacts";
+import Languages from "@/modules/portfolio/languages/Languages";
+import Greeting from "@/modules/portfolio/greeting/Greeting";
+import Projects from "@/modules/portfolio/projects/Projects";
+import RemoteJob from "@/modules/portfolio/remoteJob/RemoteJob";
 import { takeLanguages } from "@/service/lang";
 import { getRepos } from "@/service/repos";
 import style from "./styles.module.css";

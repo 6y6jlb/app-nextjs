@@ -2,8 +2,8 @@
 import { Errors } from '@/service/error';
 import { useTranslations } from 'next-intl';
 import { FormEvent } from 'react';
-import FormItem from '../theme/formItem/FormItem';
 import style from "./styles.module.css";
+import FormItem from '@/modules/common/theme/formItem/FormItem';
 
 export default function FeedbackForm({ onSubmit, loading, errors }: IProps) {
 

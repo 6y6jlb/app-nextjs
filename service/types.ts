@@ -1,5 +1,5 @@
 import { OPEN_WEATHER_UNITS } from "@/config/weather";
-import { IAuthForm as IAuthFormClient } from '../components/auth/types';
+import { IAuthForm as IAuthFormClient } from '../modules/sneaky/auth/types';
 import { EVENT_ENUM } from "./const";
 
 export type Repos = {

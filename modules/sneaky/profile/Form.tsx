@@ -2,10 +2,10 @@
 import { Errors } from '@/service/error';
 import { useTranslations } from 'next-intl';
 import { FormEvent } from 'react';
-import FormItem from '../theme/formItem/FormItem';
 import style from "./styles.module.css";
+import FormItem from '@/modules/common/theme/formItem/FormItem';
 
-export function WeatherForm({ onSubmit, loading, errors }: IProps) {
+export function ProfileForm({ onSubmit, loading, errors }: IProps) {
     const t = useTranslations("common");
 
     return (

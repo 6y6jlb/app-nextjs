@@ -1,19 +1,18 @@
-import Footer from '@/components/theme/footer/Footer';
-import Header from '@/components/theme/header/Header';
+import Footer from '@/modules/common/theme/footer/Footer';
+import Header from '@/modules/common/theme/header/Header';
 import { LINK_TYPE_ENUM } from '@/config/navigation';
 import { LOCALES } from '@/messages/index';
 import { NextIntlClientProvider } from 'next-intl';
 import { notFound } from 'next/navigation';
 import { ToastContainer } from 'react-toastify';
 
-export default async function SneakyLayout({
+export default async function PortfolioLayout({
   children, params: { locale, type }
 }: IProps) {
   let messages;
   try {
     //@ts-ignore
     messages = (await import(`@/messages/${LOCALES[locale]}.json`)).default;
-
   } catch (error) {
 
     notFound();

@@ -1,5 +1,5 @@
 
-import Feedback from '../../../components/feedback/Feedback';
+import Feedback from "@/modules/portfolio/feedback/Feedback";
 import style from "./styles.module.css";
 
 export default async function Page() {

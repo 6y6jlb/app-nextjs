@@ -8,7 +8,7 @@ import { toast } from 'react-toastify'
 import { WeatherForm } from './Form'
 import styles from './styles.module.css'
 import Forecast from './forecast/Forecast'
-import Title from '../theme/title/Title'
+import Title from '@/modules/common/theme/title/Title'
 
 export default function Weather() {
   const [forecasts, setForecasts] = React.useState([] as IWeather[])

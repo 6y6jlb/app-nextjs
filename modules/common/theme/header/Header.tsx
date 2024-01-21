@@ -1,9 +1,9 @@
-import BurgerNavigation from "@/components/theme/burgerNavigation/BurgerNavigation"
-import Navigation from "@/components/theme/navigation/Navigation"
 import { LINKS, LINK_TYPE_ENUM, PRIVACY_TYPE_ENUM } from "@/config/navigation"
 import { ILink } from "@/config/types"
 import { getMe } from "@/service/me"
 import style from "./styles.module.css"
+import Navigation from "../navigation/Navigation"
+import BurgerNavigation from "../burgerNavigation/BurgerNavigation"
 
 
 const Header = async ({ linkType }: IProps) => {

@@ -1,5 +1,5 @@
 'use client'
-import Auth from '@/components/auth/Auth';
+import Auth from '@/modules/sneaky/auth/Auth';
 import style from "./styles.module.css";
 
 export default async function Page() {

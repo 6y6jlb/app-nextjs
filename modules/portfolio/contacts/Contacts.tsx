@@ -1,9 +1,9 @@
 'use client'
 import { useState } from "react"
-import Title from "../theme/title/Title"
 import { contacts } from "./const"
 import style from "./styles.module.css"
 import { useTranslations } from "next-intl"
+import Title from "@/modules/common/theme/title/Title"
 
 
 export default function Footer({ master }: IProps) {

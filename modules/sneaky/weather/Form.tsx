@@ -1,11 +1,11 @@
 'use client'
+import FormItem from '@/modules/common/theme/formItem/FormItem';
 import { Errors } from '@/service/error';
 import { useTranslations } from 'next-intl';
 import { FormEvent } from 'react';
-import FormItem from '../theme/formItem/FormItem';
 import style from "./styles.module.css";
 
-export function ProfileForm({ onSubmit, loading, errors }: IProps) {
+export function WeatherForm({ onSubmit, loading, errors }: IProps) {
     const t = useTranslations("common");
 
     return (

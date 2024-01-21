@@ -1,11 +1,11 @@
 'use client'
 import { TakeLanguages } from "@/service/lang"
 import { Audio, } from "react-loader-spinner"
-import { getChartData } from '../../service/chart'
-import Title from "../theme/title/Title"
+import { getChartData } from '../../../service/chart'
 import chartOptions from "./chart"
 import style from "./styles.module.css"
 import dynamic from "next/dynamic";
+import Title from "@/modules/common/theme/title/Title"
 const Chart = dynamic(() => import("react-apexcharts"), { ssr: false });
 
 

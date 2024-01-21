@@ -1,8 +1,8 @@
 'use client'
+import FormItem from '@/modules/common/theme/formItem/FormItem';
 import { Errors } from '@/service/error';
 import { useTranslations } from 'next-intl';
 import React, { ChangeEvent, FormEvent, ReactNode } from 'react';
-import FormItem from '../theme/formItem/FormItem';
 import { ENTRY_TYPE_ENUM } from './const';
 import style from "./styles.module.css";
 import { IAuthForm } from './types';

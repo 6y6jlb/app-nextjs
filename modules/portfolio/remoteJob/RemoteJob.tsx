@@ -1,5 +1,5 @@
+import Title from '@/modules/common/theme/title/Title';
 import style from './styles.module.css'
-import Title from '../theme/title/Title';
 import { useTranslations } from 'next-intl';
 
 const RemoteJob = () => {
