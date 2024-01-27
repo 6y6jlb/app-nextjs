@@ -3,7 +3,7 @@ import { Task } from "@/service/types";
 import { useTranslations } from "next-intl";
 import styles from './styles.module.css'
 
-export default function TaskItem({ task }: Props) {
+export default function TaskItem({ task }: IProps) {
 	const t = useTranslations("common");
 	return (
 		<div className={styles.taskContainer}>
@@ -30,6 +30,6 @@ export default function TaskItem({ task }: Props) {
 	)
 }
 
-type Props = {
+interface IProps {
 	task: Task
 }

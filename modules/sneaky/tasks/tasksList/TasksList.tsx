@@ -7,7 +7,7 @@ import { useTranslations } from 'next-intl'
 
 
 
-const TasksList = ({ tasks }: Props) => {
+const TasksList = ({ tasks }: IProps) => {
 
     const t = useTranslations("common");
 
@@ -33,6 +33,6 @@ const TasksList = ({ tasks }: Props) => {
 export default TasksList
 
 
-type Props = {
+interface IProps {
     tasks: Task[] | undefined
 }

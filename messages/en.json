@@ -105,6 +105,7 @@
                 "password": "Enter the password",
                 "currency": "Specify the currency",
                 "language": "Specify the language",
+                "timezone": "Specify the timezone",
                 "password-repeat": "Repeat the password"
             },
             "label": {

@@ -4,7 +4,7 @@ import styles from './styles.module.css'
 import moment from 'moment';
 import { User } from '@/service/types';
 
-const Properties = ({ user }: Props) => {
+const Properties = ({ user }: IProps) => {
 
     const t = useTranslations("common");
     return (
@@ -21,6 +21,6 @@ const Properties = ({ user }: Props) => {
 
 export default Properties
 
-type Props = {
+interface IProps {
     user: User
 }

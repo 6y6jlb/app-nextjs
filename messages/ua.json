@@ -105,6 +105,7 @@
                 "password": "вкажи пароль",
                 "currency": "вкажи валюту",
                 "language": "вкажи мову",
+                "timezone": "вкажи таймзону",
                 "password-repeat": "Повтори пароль"
             },
             "label": {
