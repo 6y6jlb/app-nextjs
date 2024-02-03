@@ -3,7 +3,7 @@ import { getTasks } from '@/service/tasks';
 import { redirect } from 'next/navigation';
 import TasksList from './tasksList/TasksList';
 import styles from './styles.module.css';
-import StoreItem from './storeItem/StoreItem';
+import StoreButton from './storeButton/StoreButton';
 import Title from '@/modules/common/theme/title/Title';
 
 const Tasks = async () => {
@@ -19,7 +19,7 @@ const Tasks = async () => {
     <div className={styles.container}>
       <Title title-key='tasks.title' />
       <TasksList tasks={tasks} />
-      <StoreItem notCreatedYet={!(tasks && tasks.length)} hasTelegramId={!!user.telegram_id} />
+      <StoreButton notCreatedYet={!(tasks && tasks.length)} hasTelegramId={!!user.telegram_id} />
     </div>
   )
 }

@@ -2,7 +2,7 @@ import { useTranslations } from 'next-intl';
 import React from 'react'
 import styles from './styles.module.css'
 
-const StoreItem = ({ notCreatedYet: notCreateYet = false, hasTelegramId }: IProps) => {
+const StoreButton = ({ notCreatedYet: notCreateYet = false, hasTelegramId }: IProps) => {
     const t = useTranslations("common");
     return (
         <div className={styles.container}>
@@ -25,7 +25,7 @@ const StoreItem = ({ notCreatedYet: notCreateYet = false, hasTelegramId }: IProp
     )
 }
 
-export default StoreItem
+export default StoreButton
 
 interface IProps {
     notCreatedYet: boolean,

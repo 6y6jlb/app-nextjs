@@ -91,7 +91,7 @@
             "waiting": "On schedule",
             "regular": "Regular task",
             "queue": "In queue",
-            "create-description": "You are allowed to send messages to the telegram, and you will be invited to follow the message. Types of zavdan-Weather, exchange rate, nagaduvannya."
+            "create-description": "Allows you to create tasks in telegram that will be performed on a schedule. Types of tasks - Weather, Exchange rate, Reminder."
         },
         "form": {
             "placeholder": {
