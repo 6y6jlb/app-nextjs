@@ -1,0 +1,46 @@
+.form {
+  display: grid;
+  grid-template-columns: minmax(300px, 100%);
+  grid-template-rows: auto;
+  align-self: self-start;
+  gap: 20px;
+  border-radius: 12px;
+  border: 2px solid var(--background-transparent-white);
+  padding: 1rem;
+}
+
+.options {
+  border-radius: 12px;
+  border: 2px solid var(--background-transparent-white);
+  padding: 1rem;
+}
+
+.radio {
+  display: flex;
+  justify-content: space-between;
+}
+
+.radio>* {
+  cursor: pointer;
+}
+
+.select {
+  color: var(--text-main-white)
+}
+
+.selectedOptions {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.selectedOptions>* {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border-bottom: 2px solid var(--background-transparent-white);
+  padding: 0.5rem;
+}

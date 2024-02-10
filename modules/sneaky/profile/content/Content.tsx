@@ -36,8 +36,7 @@ const Content = ({ user }: IProps) => {
         event.preventDefault()
 
         try {
-            const updatedUser = await updateMe(form);
-            console.log(updatedUser)
+            await updateMe(form);
             toast(t('notification.profile-update.success'), { hideProgressBar: true, type: 'success' })
             setBeignEdit(false)
         } catch (error: any) {

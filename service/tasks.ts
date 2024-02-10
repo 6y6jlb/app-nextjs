@@ -27,5 +27,24 @@ export const getTasks = async (): Promise<Task[] | undefined> => {
         console.warn(error.message || error)
     }
 
+}
+
+export const storeTask = async (payload: any): Promise<Task[] | undefined> => {
+
+    const token = await cookies.get(STORAGE_KEYS_ENUM.JWT_ACCESS_TOKEN);
+
+    if (!token) {
+        throw new Error('Invalid token')
+    }
+
+    const response = await fetch(API.POST.TASKS, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
+        body: JSON.stringify(payload)
+    })
+
+    await throwOnError(response)
+
+    return await response.json()
 
 }

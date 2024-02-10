@@ -35,7 +35,7 @@ export const getMe = async (): Promise<User | undefined> => {
     }
 }
 
-export const updateMe = async (formData: ProfileFormType): Promise<User | undefined> => {
+export const updateMe = async (formData: ProfileFormType): Promise<void> => {
 
     const token = await cookies.get(STORAGE_KEYS_ENUM.JWT_ACCESS_TOKEN);
 
@@ -50,12 +50,4 @@ export const updateMe = async (formData: ProfileFormType): Promise<User | undefi
     })
 
     await throwOnError(response)
-
-    const user = await response.json()
-
-    if (!user._id || Array.isArray(user)) {
-        throw new Error('Customer is undefined')
-    }
-
-    return user;
 }

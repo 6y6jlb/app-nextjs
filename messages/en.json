@@ -44,6 +44,7 @@
             "task-create-another": "Create",
             "update-data": "Edit information",
             "edit": "Edit",
+            "option-add": "Add an option",
             "cancel": "Cancel"
         },
         "weather": {
@@ -66,6 +67,14 @@
             "profile-update": {
                 "success": "Profile has been successfully updated",
                 "error": "An error has occurred, try again later"
+            },
+            "task-create": {
+                "success": "Task saved",
+                "error": "An error occurred, try again later"
+            },
+            "task-update": {
+                "success": "Task changed",
+                "error": "An error occurred, try again later"
             }
         },
         "auth": {
@@ -83,6 +92,8 @@
         },
         "tasks": {
             "title": "Tasks",
+            "create-title": "Create task",
+            "update-title": "Edit task",
             "empty": "Tasks are missing",
             "call_at": "Execution time",
             "timezone": "timezone",
@@ -91,6 +102,7 @@
             "waiting": "On schedule",
             "regular": "Regular task",
             "queue": "In queue",
+            "current-events": "Current options",
             "create-description": "Allows you to create tasks in telegram that will be performed on a schedule. Types of tasks - Weather, Exchange rate, Reminder."
         },
         "form": {
@@ -106,10 +118,14 @@
                 "currency": "Specify the currency",
                 "language": "Specify the language",
                 "timezone": "Specify the timezone",
+                "is-regular": "Regular task",
+                "call-at": "Call at",
+                "event-type": "Event type",
                 "password-repeat": "Repeat the password"
             },
             "label": {
                 "register-already": "Already registered",
+                "is-regular": "Regular task",
                 "enter-by": "Login via"
             }
         },
