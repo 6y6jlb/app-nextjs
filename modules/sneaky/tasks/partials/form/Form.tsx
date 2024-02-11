@@ -65,7 +65,7 @@ export function Form({ onSubmit, loading, errors, formData, onChange }: IProps) 
                     placeholder={t("form.placeholder.call-at")}
                     name={"call_at"}
                     type="text"
-                    value={moment(formData.call_at).format('hh:mm')}
+                    value={formData.call_at}
                     onChange={fieldHandler('call_at')}
                 />
             </FormItem>

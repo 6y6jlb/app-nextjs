@@ -1,9 +1,9 @@
 'use client'
-import { useTranslations } from "next-intl";
-import styles from './styles.module.css'
 import { TaskType } from "@/service/task/types";
+import { useTranslations } from "next-intl";
+import styles from './styles.module.css';
 
-export default function TaskItem({ task }: IProps) {
+export default function TaskItem({ task, onRemove }: IProps) {
 	const t = useTranslations("common");
 	return (
 		<div className={styles.taskContainer}>
@@ -25,11 +25,17 @@ export default function TaskItem({ task }: IProps) {
 					)
 				}
 			</div>
-
+			<button
+				className={styles.btnRemove + ' btn-secondary'}
+				onClick={onRemove}
+			>
+				x
+			</button>
 		</div>
 	)
 }
 
 interface IProps {
 	task: TaskType
+	onRemove: () => void
 }
