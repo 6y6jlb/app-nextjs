@@ -1,5 +1,5 @@
 import Title from "@/modules/common/theme/title/Title";
-import { getMe } from "@/service/me";
+import { getMe } from "@/service/me/me";
 import { redirect } from "next/navigation";
 import Content from "./content/Content";
 import styles from './styles.module.css';

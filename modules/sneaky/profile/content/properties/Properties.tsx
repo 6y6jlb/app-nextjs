@@ -2,7 +2,7 @@ import { useTranslations } from 'next-intl';
 import React from 'react'
 import styles from './styles.module.css'
 import moment from 'moment';
-import { User } from '@/service/types';
+import { User } from '@/service/me/types';
 
 const Properties = ({ user }: IProps) => {
 

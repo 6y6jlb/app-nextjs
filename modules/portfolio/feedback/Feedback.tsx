@@ -1,7 +1,7 @@
 'use client'
 
-import { Errors, getFormErrors } from '@/service/error';
-import { sendNotification } from '@/service/notification';
+import { Errors, getFormErrors } from '@/service/error/error';
+import { sendNotification } from '@/service/notification/notification';
 import React, { FormEvent } from 'react';
 import { toast } from 'react-toastify';
 import FeedbackForm from './Form';

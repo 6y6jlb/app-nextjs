@@ -1,12 +1,12 @@
 import { TEMPERATURE_SIGN } from '@/config/weather';
-import { IWeather } from '@/service/types'
+import { IWeather } from '@/service/weather/types'
 import React from 'react'
 import styles from './styles.module.css'
 import { useTranslations } from 'next-intl';
 
-export default function Forecast({forecast}: IProps) {
+export default function Forecast({ forecast }: IProps) {
     const t = useTranslations("common");
-    
+
     const sign = TEMPERATURE_SIGN[forecast.units];
 
     return (

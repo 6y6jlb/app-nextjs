@@ -1,5 +1,5 @@
 'use client'
-import { Repo } from "@/service/types"
+import { Repo } from "@/service/repos/types";
 import { getImageClass } from "./helpers"
 import style from "./styles.module.css"
 import { useTranslations } from "next-intl";

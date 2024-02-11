@@ -1,7 +1,7 @@
 'use client'
-import { TakeLanguages } from "@/service/lang"
+import { TakeLanguages } from "@/service/lang/lang"
 import { Audio, } from "react-loader-spinner"
-import { getChartData } from '../../../service/chart'
+import { getChartData } from '../../../service/chart/chart'
 import chartOptions from "./chart"
 import style from "./styles.module.css"
 import dynamic from "next/dynamic";

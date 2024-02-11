@@ -1,41 +1,35 @@
 import { API } from "@/config/api";
 import { STORAGE_KEYS_ENUM } from "@/config/storage";
-import { ProfileFormType } from "@/modules/sneaky/profile/types";
-import cookies from "./cookies";
-import { throwOnError } from "./error";
-import { User } from "./types";
+import cookies from "../storage/cookies";
+import { throwOnError } from "../error/error";
+import { TaskType } from "./types";
 
-export const getMe = async (): Promise<User | undefined> => {
+export const getTasks = async (): Promise<TaskType[] | undefined> => {
 
     try {
-
         const token = await cookies.get(STORAGE_KEYS_ENUM.JWT_ACCESS_TOKEN);
 
         if (!token) {
             throw new Error('Invalid token')
         }
 
-        const response = await fetch(API.GET.ME, {
+        const response = await fetch(API.GET.TASKS, {
             method: 'GET',
             headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
         })
 
         await throwOnError(response)
 
-        const user = await response.json()
+        return await response.json()
 
-        if (!user._id || Array.isArray(user)) {
-            throw new Error('Customer is undefined')
-        }
-
-        return user;
 
     } catch (error: any) {
         console.warn(error.message || error)
     }
+
 }
 
-export const updateMe = async (formData: ProfileFormType): Promise<void> => {
+export const storeTask = async (payload: any): Promise<TaskType[] | undefined> => {
 
     const token = await cookies.get(STORAGE_KEYS_ENUM.JWT_ACCESS_TOKEN);
 
@@ -43,11 +37,14 @@ export const updateMe = async (formData: ProfileFormType): Promise<void> => {
         throw new Error('Invalid token')
     }
 
-    const response = await fetch(API.PUT.ME, {
-        method: 'PUT',
+    const response = await fetch(API.POST.TASKS, {
+        method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
-        body: JSON.stringify(formData)
+        body: JSON.stringify(payload)
     })
 
     await throwOnError(response)
+
+    return await response.json()
+
 }

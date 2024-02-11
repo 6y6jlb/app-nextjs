@@ -1,14 +1,14 @@
 'use client'
 import FormItem from '@/modules/common/theme/formItem/FormItem';
-import { Errors } from '@/service/error';
+import { Errors } from '@/service/error/error';
 import { useTranslations } from 'next-intl';
 import { ChangeEvent, FormEvent, useMemo, useState } from 'react';
 import style from "./styles.module.css";
 import React from 'react';
-import tz from '@/service/const/tz.json'
+import tz from '@/config/tz.json'
 import moment from 'moment';
 import { DEFAULT_OPTION } from '../../const';
-import { EVENT_ENUM } from '@/service/const/common';
+import { EVENT_ENUM } from '@/config/event';
 
 export function Form({ onSubmit, loading, errors, formData, onChange }: IProps) {
     const t = useTranslations("common");

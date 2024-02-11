@@ -1,6 +1,6 @@
 import { API } from "@/config/api"
-import { FeedBackForm } from "./types"
-import { throwOnError } from "./error"
+import { FeedBackForm } from "../types"
+import { throwOnError } from "../error/error"
 
 export const sendNotification = async (formData: FeedBackForm) => {
     const response = await fetch(API.POST.NOTIFICATION, {

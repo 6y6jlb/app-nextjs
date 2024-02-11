@@ -1,10 +1,10 @@
-import { getMe } from '@/service/me';
-import { getTasks } from '@/service/tasks';
 import { redirect } from 'next/navigation';
 import TasksList from './tasksList/TasksList';
 import styles from './styles.module.css';
 import StoreButton from './storeButton/StoreButton';
 import Title from '@/modules/common/theme/title/Title';
+import { getTasks } from '@/service/task/tasks';
+import { getMe } from '@/service/me/me';
 
 const Tasks = async () => {
 

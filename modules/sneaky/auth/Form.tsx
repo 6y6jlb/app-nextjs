@@ -1,6 +1,6 @@
 'use client'
 import FormItem from '@/modules/common/theme/formItem/FormItem';
-import { Errors } from '@/service/error';
+import { Errors } from '@/service/error/error';
 import { useTranslations } from 'next-intl';
 import React, { ChangeEvent, FormEvent, ReactNode } from 'react';
 import { ENTRY_TYPE_ENUM } from './const';

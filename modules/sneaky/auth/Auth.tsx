@@ -1,6 +1,6 @@
 'use client'
-import { auth } from '@/service/auth'
-import { Errors, getFormErrors } from '@/service/error'
+import { auth } from '@/service/auth/auth'
+import { Errors, getFormErrors } from '@/service/error/error'
 import { useLocale, useTranslations } from 'next-intl'
 import React, { FormEvent } from 'react'
 import { toast } from 'react-toastify'

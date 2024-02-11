@@ -3,8 +3,8 @@ import Languages from "@/modules/portfolio/languages/Languages";
 import Greeting from "@/modules/portfolio/greeting/Greeting";
 import Projects from "@/modules/portfolio/projects/Projects";
 import RemoteJob from "@/modules/portfolio/remoteJob/RemoteJob";
-import { takeLanguages } from "@/service/lang";
-import { getRepos } from "@/service/repos";
+import { takeLanguages } from "@/service/lang/lang";
+import { getRepos } from "@/service/repos/repos";
 import style from "./styles.module.css";
 
 export default async function Page() {

@@ -1,26 +1,27 @@
 'use client'
-import { Errors, getFormErrors } from '@/service/error'
-import { storeTask } from '@/service/tasks'
-import { User } from '@/service/types'
+import { Errors, getFormErrors } from '@/service//error/error'
+import { User } from '@/service/me/types'
 import { useTranslations } from 'next-intl'
 import React, { FormEvent, useEffect } from 'react'
 import { toast } from 'react-toastify'
 import { DEFAULT_TASK_FORM } from '../../const'
 import { Form } from '../../partials/form/Form'
+import { TaskFormType } from '../../types'
 import styles from './styles.module.css'
+import { storeTask } from '@/service/task/tasks'
 
 
 
 const Content = ({ user }: Props) => {
     const [loading, setLoading] = React.useState(false)
     const [errors, setErrors] = React.useState(new Errors())
-    const [form, setForm] = React.useState(DEFAULT_TASK_FORM)
+    const [form, setForm] = React.useState<TaskFormType>(DEFAULT_TASK_FORM)
     const t = useTranslations("common");
 
     useEffect(() => {
         setForm({
             ...DEFAULT_TASK_FORM,
-            tz: `${user.tz || 'Asia/Tbilisi'}`,
+            tz: user.tz || 'Asia/Tbilisi',
         })
     }, [])
 

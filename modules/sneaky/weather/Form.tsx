@@ -1,6 +1,6 @@
 'use client'
 import FormItem from '@/modules/common/theme/formItem/FormItem';
-import { Errors } from '@/service/error';
+import { Errors } from '@/service/error/error';
 import { useTranslations } from 'next-intl';
 import { FormEvent } from 'react';
 import style from "./styles.module.css";

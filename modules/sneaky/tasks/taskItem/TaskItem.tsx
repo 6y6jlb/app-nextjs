@@ -1,7 +1,7 @@
 'use client'
-import { Task } from "@/service/types";
 import { useTranslations } from "next-intl";
 import styles from './styles.module.css'
+import { TaskType } from "@/service/task/types";
 
 export default function TaskItem({ task }: IProps) {
 	const t = useTranslations("common");
@@ -31,5 +31,5 @@ export default function TaskItem({ task }: IProps) {
 }
 
 interface IProps {
-	task: Task
+	task: TaskType
 }

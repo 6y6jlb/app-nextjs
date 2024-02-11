@@ -2,7 +2,7 @@ import moment from "moment";
 
 export const DEFAULT_TASK_FORM = {
     tz: 'Asia/Tbilisi',
-    call_at: moment().add(10, 'hours'),
+    call_at: moment().add(10, 'hours').format('hh:mm'),
     is_regular: true,
     options: []
 }

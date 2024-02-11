@@ -1,9 +1,9 @@
 import { ENTRY_TYPE_ENUM } from "@/modules/sneaky/auth/const";
 import { API } from "@/config/api";
 import { STORAGE_KEYS_ENUM } from "@/config/storage";
-import { throwOnError } from "./error";
+import { throwOnError } from "../error/error";
 import { AuthForm, AuthResponse, LoginPayload, RegisterPayload } from "./types";
-import cookies from "@/service/cookies";
+import cookies from "../storage/cookies";
 
 
 export const auth = async (formData: AuthForm): Promise<AuthResponse> => {

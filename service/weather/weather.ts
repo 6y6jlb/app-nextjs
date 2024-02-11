@@ -1,5 +1,5 @@
 import { API } from "@/config/api";
-import { throwOnError } from "./error";
+import { throwOnError } from "../error/error";
 import { IWeather, WeatherForm } from "./types";
 
 export const getWeather = async (formData: WeatherForm, locale: string): Promise<IWeather> => {

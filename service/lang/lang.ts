@@ -1,4 +1,5 @@
-import { ReposData } from './types'
+import { ReposData } from "../repos/types"
+
 
 
 export const takeLanguages = (repos: ReposData): TakeLanguages => {
