@@ -1,15 +1,14 @@
-import { ENTRY_TYPE_ENUM } from "@/modules/sneaky/auth/const";
 import { API } from "@/config/api";
 import { STORAGE_KEYS_ENUM } from "@/config/storage";
+import { ENTRY_TYPE_ENUM } from "@/modules/sneaky/auth/const";
 import { throwOnError } from "../error/error";
-import { AuthForm, AuthResponse, LoginPayload, RegisterPayload } from "./types";
 import cookies from "../storage/cookies";
+import { AuthForm, AuthResponse, LoginPayload, RegisterPayload } from "./types";
 
 
 export const auth = async (formData: AuthForm): Promise<AuthResponse> => {
 
     const url = new URL(formData.already_register ? API.POST.LOGIN : API.POST.REGISTER);
-
 
     const response = await fetch(url, {
         method: 'POST',
@@ -19,11 +18,43 @@ export const auth = async (formData: AuthForm): Promise<AuthResponse> => {
 
     await throwOnError(response)
 
-    const { access_token } = await response.json()
+    const { access_token, refresh_token } = await response.json()
 
-    cookies.set(STORAGE_KEYS_ENUM.JWT_ACCESS_TOKEN, access_token)
+    cookies.set(STORAGE_KEYS_ENUM.JWT_ACCESS_TOKEN, access_token);
+    cookies.set(STORAGE_KEYS_ENUM.JWT_REFRESH_TOKEN, refresh_token)
 
     return { access_token };
+}
+
+export const fetchAccessToken = async (): Promise<{ access_token: string } | undefined> => {
+    const url = new URL(API.POST.REFRESH_TOKEN);
+    const refreshToken = await cookies.get(STORAGE_KEYS_ENUM.JWT_REFRESH_TOKEN)
+
+    if (!refreshToken) {
+        return;
+    }
+
+    const response = await fetch(url, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ refresh_token: refreshToken }),
+    })
+
+    await throwOnError(response)
+
+    const { access_token } = await response.json()
+
+    cookies.set(STORAGE_KEYS_ENUM.JWT_ACCESS_TOKEN, access_token);
+
+    return { access_token };
+}
+
+export const handlerUnautorized = async (response: any, callback: () => Promise<any>) => {
+    if (response.status === 401) {
+        await fetchAccessToken();
+        return callback();
+    }
+    await throwOnError(response)
 }
 
 const getLoginPayload = (formData: AuthForm): LoginPayload => {

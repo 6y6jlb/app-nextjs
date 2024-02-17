@@ -28,6 +28,9 @@ export default function Auth() {
       await auth({ ...form, locale });
       setForm(DEFAULT_AUTH_FORM)
       toast(t('notification.auth.success'), { hideProgressBar: true, type: 'success' })
+
+      router.refresh()
+      router.push('/profile')
     } catch (error: any) {
       if (error.code === 422) {
         setErrors(new Errors(getFormErrors(error.errors)))
@@ -35,8 +38,6 @@ export default function Auth() {
       toast(t('notification.auth.error'), { hideProgressBar: true, type: 'error' })
     } finally {
       setLoading(false)
-      router.refresh()
-      router.push('/profile')
     }
   }
 

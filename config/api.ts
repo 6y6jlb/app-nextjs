@@ -3,6 +3,7 @@ export const API = {
         NOTIFICATION: `${process.env.NEXT_PUBLIC_DEFAULT_HOST}/api/notification/email/send`,
         LOGIN: `${process.env.NEXT_PUBLIC_DEFAULT_HOST}/api/auth/login`,
         REGISTER: `${process.env.NEXT_PUBLIC_DEFAULT_HOST}/api/auth/register`,
+        REFRESH_TOKEN: `${process.env.NEXT_PUBLIC_DEFAULT_HOST}/api/auth/refresh_token`,
         TASKS: `${process.env.NEXT_PUBLIC_DEFAULT_HOST}/api/tasks`,
     },
     GET: {
