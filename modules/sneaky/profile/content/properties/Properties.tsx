@@ -9,7 +9,7 @@ const Properties = ({ user }: IProps) => {
     const t = useTranslations("common");
 
     const toTelegram = useCallback(() => {
-        window.open('https://t.me/Leshka_tg_bot', '_blank')
+        window.open('https://t.me/Leshka_tg_bot?start=' + user._id, '_blank')
     }, [])
 
     return (
