@@ -27,16 +27,6 @@ export function Form({ onSubmit, loading, errors, formData, onChange }: IProps) 
                     onChange={fieldHandler('email')}
                 />
             </FormItem>
-            <FormItem invalid={errors.has('telegram_id')} notification={errors.get('telegram_id')}>
-                <input
-                    disabled={loading}
-                    placeholder={t("form.placeholder.telegram_id")}
-                    name={"telegram_id"}
-                    type="text"
-                    value={formData.telegram_id}
-                    onChange={fieldHandler('telegram_id')}
-                />
-            </FormItem>
             <FormItem invalid={errors.has('name')} notification={errors.get('name')}>
                 <input
                     disabled={loading}

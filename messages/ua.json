@@ -39,6 +39,7 @@
         "button": {
             "save": "зберегти",
             "send": "надіслати",
+            "add": "додавши",
             "contact-us": "зв'язатися безпосередньо",
             "task-create-first": "створити перше завдання",
             "task-create-another": "створити",
@@ -88,6 +89,7 @@
         "profile": {
             "title": "Профіль",
             "telegram_id": "Телеграм айді",
+            "telegram_id_empty": "Телеграм айді відсутній",
             "name": "Ім'я",
             "email": "Емейл",
             "created_at": "Дата реєстрації",

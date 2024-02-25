@@ -38,6 +38,7 @@
         },
         "button": {
             "save": "save",
+            "add": "add",
             "send": "send",
             "contact-us": "contact us directly",
             "task-create-first": "Create the first task",
@@ -88,6 +89,7 @@
         "profile": {
             "title": "Profile",
             "telegram_id": "Telegram id",
+            "telegram_id_empty": "Telegram id is empty",
             "name": "Name",
             "email": "Email",
             "created_at": "Registration date",

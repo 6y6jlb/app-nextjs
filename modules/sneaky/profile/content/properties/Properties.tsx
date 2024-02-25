@@ -1,15 +1,24 @@
-import { useTranslations } from 'next-intl';
-import React from 'react'
-import styles from './styles.module.css'
-import moment from 'moment';
 import { User } from '@/service/me/types';
+import moment from 'moment';
+import { useTranslations } from 'next-intl';
+import { useCallback } from 'react';
+import styles from './styles.module.css';
 
 const Properties = ({ user }: IProps) => {
 
     const t = useTranslations("common");
+
+    const toTelegram = useCallback(() => {
+        window.open('https://t.me/Leshka_tg_bot', '_blank')
+    }, [])
+
     return (
         <div className={styles.properties}>
-            <div><span>{t('profile.telegram_id')}</span><span>{user.telegram_id}</span></div>
+            {
+                !user.telegram_id
+                    ? <div><span>{t('profile.telegram_id')}</span><span>{user.telegram_id}</span></div>
+                    : <div><span>{t('profile.telegram_id_empty')}</span><button onClick={toTelegram}>{t('button.add')}</button></div>
+            }
             <div><span>{t('profile.name')}</span><span>{user.name}</span></div>
             <div><span>{t('profile.email')}</span><span>{user.email}</span></div>
             <div><span>{t('profile.currency')}</span><span>{user.currency}</span></div>

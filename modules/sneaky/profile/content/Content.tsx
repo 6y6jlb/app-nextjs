@@ -25,7 +25,6 @@ const Content = ({ user }: IProps) => {
             currency: `${user.currency}`,
             email: `${user.email}`,
             name: `${user.name || user.email}`,
-            telegram_id: `${user.telegram_id}`,
             locale: `${user.locale || useLocale()}`,
             // timezone: `${user.tz || ''}`,
         })
