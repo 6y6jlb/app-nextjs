@@ -78,7 +78,6 @@ const getRegisterPayload = (formData: AuthForm): RegisterPayload => {
         password: formData.password,
         password_repeat: formData.password_repeat,
         email: formData.email,
-        telegram_id: formData.telegram_id
     };
 
     return payload

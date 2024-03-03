@@ -5,9 +5,8 @@ export type AuthForm = IAuthFormClient & {
     locale: string
 }
 
-export type RegisterPayload = Omit<AuthForm, 'locale' | 'already_register' | 'entry_type'> & {
+export type RegisterPayload = Omit<AuthForm, 'locale' | 'already_register' | 'entry_type' | 'telegram_id'> & {
     email?: string,
-    telegram_id?: string
 }
 
 export type LoginPayload = Pick<AuthForm, 'password'> & {

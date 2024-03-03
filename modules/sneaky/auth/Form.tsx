@@ -62,7 +62,7 @@ export function AuthForm({ onSubmit, formData, onChange, loading, errors }: IPro
             )}
 
 
-            {(!formData.already_register || formData.entry_type === ENTRY_TYPE_ENUM.TELEGRAM) && (
+            {(formData.already_register && formData.entry_type === ENTRY_TYPE_ENUM.TELEGRAM) && (
                 <FormItem invalid={!!errors.has('telegram_id')} notification={errors.get('telegram_id')}>
                     <input
                         disabled={loading}
