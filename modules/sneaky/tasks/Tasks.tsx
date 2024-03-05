@@ -19,7 +19,7 @@ const Tasks = async () => {
     <div className={styles.container}>
       <Title title-key='tasks.title' />
       <TasksList tasks={tasks} />
-      <StoreButton notCreatedYet={!(tasks && tasks.length)} hasTelegramId={!!user.telegram_id} />
+      <StoreButton notCreatedYet={!(tasks && tasks.length)} hasTelegramId={!!user.telegram_id} userId={user._id} />
     </div>
   )
 }

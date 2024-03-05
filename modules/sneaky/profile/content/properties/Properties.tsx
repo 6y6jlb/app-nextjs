@@ -15,7 +15,7 @@ const Properties = ({ user }: IProps) => {
     return (
         <div className={styles.properties}>
             {
-                !user.telegram_id
+                user.telegram_id
                     ? <div><span>{t('profile.telegram_id')}</span><span>{user.telegram_id}</span></div>
                     : <div><span>{t('profile.telegram_id_empty')}</span><button onClick={toTelegram}>{t('button.add')}</button></div>
             }

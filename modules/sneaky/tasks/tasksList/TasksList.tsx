@@ -18,7 +18,9 @@ const TasksList = ({ tasks }: IProps) => {
 
     if (!(tasks && tasks.length)) {
         return (
-            <div>{t('tasks.empty')}</div>
+            <div>
+                <p className={styles.emptyList}>{t('tasks.empty')}</p>
+            </div>
         )
     }
 
