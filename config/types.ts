@@ -5,6 +5,7 @@ export interface ILink {
     type: PATH_TYPE_ENUM,
     title: string,
     privacy_type: PRIVACY_TYPE_ENUM,
+    onClick?: any,
 }
 
 export type ILinks = {

@@ -20,5 +20,6 @@ export const API = {
     },
     DELETE: {
         TASKS: `${process.env.NEXT_PUBLIC_DEFAULT_HOST}/api/tasks`,
+        LOGOUT: `${process.env.NEXT_PUBLIC_DEFAULT_HOST}/api/auth/logout`,
     }
 }

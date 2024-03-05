@@ -1,5 +1,6 @@
 'use client'
 import { ILink } from "@/config/types"
+import { logout } from "@/service/auth/auth"
 import { faBars } from "@fortawesome/free-solid-svg-icons/faBars"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { useTranslations } from "next-intl"
@@ -22,13 +23,22 @@ export default function BurgerNavigation({ links }: IProps) {
 
 	const mappedLinks = links.map(el => {
 		return (
-			<Link
-				className={hash.includes(el.path) ? 'active' : ''}
-				href={el.path}
-				key={el.path}
-			>
-				{t(el.title)}
-			</Link>
+			el.path.includes('logout') ?
+				<a
+					className={hash.includes(el.path) ? 'active' : ''}
+					onClick={logout}
+					key={el.path}
+				>
+					{t(el.title)}
+				</a>
+				:
+				<Link
+					className={hash.includes(el.path) ? 'active' : ''}
+					href={el.path}
+					key={el.path}
+				>
+					{t(el.title)}
+				</Link>
 		);
 	})
 

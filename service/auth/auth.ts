@@ -49,6 +49,29 @@ export const fetchAccessToken = async (): Promise<{ access_token: string } | und
     return { access_token };
 }
 
+
+export const logout = async (): Promise<void> => {
+    const url = new URL(API.DELETE.LOGOUT);
+    const token = await cookies.get(STORAGE_KEYS_ENUM.JWT_ACCESS_TOKEN);
+
+    if (!token) {
+        throw new Error('Invalid token')
+    }
+
+    const response = await fetch(url, {
+        method: 'DELETE',
+        headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
+    })
+
+
+    await throwOnError(response)
+
+    cookies.set(STORAGE_KEYS_ENUM.JWT_ACCESS_TOKEN, null)
+
+    window.location.reload();
+}
+
+
 export const handlerUnautorized = async (response: any, callback: () => Promise<any>) => {
     if (response.status === 401) {
         await fetchAccessToken();

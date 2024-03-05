@@ -1,3 +1,4 @@
+import { logout } from "@/service/auth/auth";
 import { ILinks } from "./types";
 
 export enum PATH_TYPE_ENUM {
