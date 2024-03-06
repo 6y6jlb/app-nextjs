@@ -1,9 +1,11 @@
 import { useTranslations } from 'next-intl';
-import React, { useCallback } from 'react'
-import styles from './styles.module.css'
+import { useRouter } from 'next/navigation';
+import { useCallback } from 'react';
+import styles from './styles.module.css';
 
 const StoreButton = ({ notCreatedYet: notCreateYet = false, hasTelegramId, userId }: IProps) => {
     const t = useTranslations("common");
+    const router = useRouter()
 
     const toTelegram = useCallback(() => {
         window.open('https://t.me/Leshka_tg_bot?start=' + userId, '_blank')
@@ -12,8 +14,8 @@ const StoreButton = ({ notCreatedYet: notCreateYet = false, hasTelegramId, userI
     return (
         <div className={styles.container}>
             <p>{t('tasks.create-description')}</p>
-            <button disabled={!hasTelegramId} className="btn-primary" onClick={(e) => {
-                location.assign('/tasks/create')
+            <button disabled={!hasTelegramId} className="btn-primary w-50" onClick={(e) => {
+                router.push('/tasks/create')
             }}>
                 {t(notCreateYet ? 'button.task-create-first' : 'button.task-create-another')}
             </button>

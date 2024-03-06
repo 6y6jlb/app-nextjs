@@ -3,10 +3,24 @@ import { TaskType } from "@/service/task/types";
 import { useTranslations } from "next-intl";
 import styles from './styles.module.css';
 
-export default function TaskItem({ task, onRemove }: IProps) {
+export default function TaskItem({ task, onRemove, onEdit }: IProps) {
 	const t = useTranslations("common");
 	return (
 		<div className={styles.taskContainer}>
+			<div className={styles.btnContainer}>
+				<button
+					className={' btn-secondary'}
+					onClick={onEdit}
+				>
+					{t('button.edit')}
+				</button>
+				<button
+					className={' btn-secondary'}
+					onClick={onRemove}
+				>
+					{t('button.remove')}
+				</button>
+			</div>
 			<p>#{task._id}</p>
 			<p><span>{t('tasks.user_id')}&nbsp;&ndash;&nbsp;</span>#{task.user_id}</p>
 			<p>{t(task.is_regular ? 'tasks.regular' : 'tasks.once')}</p>
@@ -25,12 +39,6 @@ export default function TaskItem({ task, onRemove }: IProps) {
 					)
 				}
 			</div>
-			<button
-				className={styles.btnRemove + ' btn-secondary'}
-				onClick={onRemove}
-			>
-				x
-			</button>
 		</div>
 	)
 }
@@ -38,4 +46,5 @@ export default function TaskItem({ task, onRemove }: IProps) {
 interface IProps {
 	task: TaskType
 	onRemove: () => void
+	onEdit: () => void
 }

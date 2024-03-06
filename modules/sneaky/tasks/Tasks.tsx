@@ -18,8 +18,8 @@ const Tasks = async () => {
   return (
     <div className={styles.container}>
       <Title title-key='tasks.title' />
-      <TasksList tasks={tasks} />
       <StoreButton notCreatedYet={!(tasks && tasks.length)} hasTelegramId={!!user.telegram_id} userId={user._id} />
+      <TasksList tasks={tasks} />
     </div>
   )
 }

@@ -39,6 +39,7 @@
         "button": {
             "save": "save",
             "add": "add",
+            "remove": "remove",
             "send": "send",
             "contact-us": "contact us directly",
             "task-create-first": "Create the first task",

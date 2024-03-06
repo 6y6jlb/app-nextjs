@@ -7,12 +7,14 @@ import React, { useCallback, useState } from 'react'
 import { toast } from 'react-toastify'
 import TaskItem from '../taskItem/TaskItem'
 import styles from './styles.module.css'
+import { useRouter } from 'next/navigation'
 
 
 
 const TasksList = ({ tasks }: IProps) => {
     const [loading, setLoading] = useState(false)
     const [removedTaskIds, setRemovedTaskIds] = useState<string[]>([])
+    const router = useRouter();
 
     const t = useTranslations("common");
 
@@ -40,12 +42,16 @@ const TasksList = ({ tasks }: IProps) => {
         }
     }, [])
 
+    const editTask = useCallback(async (task_id: string) => {
+        router.push(`/tasks/${task_id}/edit`)
+    }, [])
+
     const mappedTasks = React.useMemo(() => {
         return tasks
             .filter(t => !removedTaskIds.includes(t._id))
             .map((task) => {
                 return (
-                    <TaskItem key={task._id} task={task} onRemove={() => removeTask(task._id)} />
+                    <TaskItem key={task._id} task={task} onRemove={() => removeTask(task._id)} onEdit={() => editTask(task._id)} />
                 )
             })
     }, [tasks, removedTaskIds])

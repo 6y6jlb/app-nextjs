@@ -39,7 +39,8 @@
         "button": {
             "save": "сохранить",
             "send": "отправить",
-            "add": "add",
+            "add": "добавить",
+            "remove": "удалить",
             "contact-us": "связаться на прямую",
             "task-create-first": "Создать первую задачу",
             "task-create-another": "Создать",
