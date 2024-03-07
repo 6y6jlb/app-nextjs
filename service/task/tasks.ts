@@ -54,14 +54,7 @@ export const storeTask = async (payload: any): Promise<TaskType[] | undefined> =
         body: JSON.stringify(payload)
     })
 
-    try {
-        await throwOnError(response)
-    } catch (error: any) {
-        if (error.code = 401) {
-            await fetchAccessToken()
-            await storeTask(payload)
-        }
-    }
+    await handlerUnautorized(response, async () => await storeTask(payload))
 
     return await response.json()
 
