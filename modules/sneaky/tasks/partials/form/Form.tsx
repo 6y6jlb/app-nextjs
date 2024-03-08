@@ -128,6 +128,12 @@ export function Form({ onSubmit, loading, errors, formData, onChange }: IProps) 
                 >
                     {t('button.option-add')}
                 </button>
+                {
+                    errors.has('options') && (
+                        <p className={`${style.notification}`}>{errors.get('options')}</p>
+
+                    )
+                }
             </div>
 
             <button
