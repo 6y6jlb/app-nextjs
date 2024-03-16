@@ -9,7 +9,12 @@
             "profile": "Profile",
             "tasks": "Tasks",
             "auth": "Login",
+            "sandbox": "Sandbox",
+            "threejs": "threejs",
             "logout": "Exit"
+        },
+        "sandbox": {
+            "title": "Sandbox"
         },
         "main": {
             "description": "My name is Basalov Alexey and this is my portfolio",

@@ -9,7 +9,12 @@
             "profile": "Профиль",
             "tasks": "Задачи",
             "auth": "Вход",
+            "sandbox": "Песочница",
+            "threejs": "threejs",
             "logout": "Выход"
+        },
+        "sandbox": {
+            "title": "Песочница"
         },
         "main": {
             "description": "Меня зовут Басалов Алексей, и это мое портфолио",

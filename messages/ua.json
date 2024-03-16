@@ -9,7 +9,12 @@
             "profile": "Профіль",
             "tasks": "Завдання",
             "auth": "Вхід",
+            "sandbox": "Пісочниця",
+            "threejs": "threejs",
             "logout": "Вихід"
+        },
+        "sandbox": {
+            "title": "Пісочниця"
         },
         "main": {
             "description": "Мене звуть Басалов Олексій, і це моє портфоліо",

@@ -1,5 +1,4 @@
-import { logout } from "@/service/auth/auth";
-import { ILinks } from "./types";
+import { ILink, ILinks } from "./types";
 
 export enum PATH_TYPE_ENUM {
     ID = 'id',
@@ -31,6 +30,12 @@ export const LINKS: ILinks = {
         { path: '/auth', title: 'navigation.auth', type: PATH_TYPE_ENUM.ROUTE, privacy_type: PRIVACY_TYPE_ENUM.PUBLIC },
         { path: '/profile', title: 'navigation.profile', type: PATH_TYPE_ENUM.ROUTE, privacy_type: PRIVACY_TYPE_ENUM.PRIVATE },
         { path: '/tasks', title: 'navigation.tasks', type: PATH_TYPE_ENUM.ROUTE, privacy_type: PRIVACY_TYPE_ENUM.PRIVATE },
+        { path: '/sandbox', title: 'navigation.sandbox', type: PATH_TYPE_ENUM.ROUTE, privacy_type: PRIVACY_TYPE_ENUM.PRIVATE },
         { path: '/auth/logout', title: 'navigation.logout', type: PATH_TYPE_ENUM.ROUTE, privacy_type: PRIVACY_TYPE_ENUM.PRIVATE },
     ],
 }
+
+
+export const SANDBOX_LINKS: ILink[] = [
+    { path: 'sandbox/threejs', title: 'navigation.threejs', type: PATH_TYPE_ENUM.ROUTE, privacy_type: PRIVACY_TYPE_ENUM.PRIVATE }
+]
