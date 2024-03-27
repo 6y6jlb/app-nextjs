@@ -1,15 +1,14 @@
 .main {
-  padding-top: var(--header-height);
   text-align: start;
 }
 
-.main > div:nth-child(2n) {
+.main>div:nth-child(2n) {
   color: var(--text-main-white);
   background-color: var(--background-main-black);
 }
 
 
-.main > div:nth-child(2n+1) {
+.main>div:nth-child(2n+1) {
   color: var(--text-main-black);
   background-color: var(--background-main-white);
 }

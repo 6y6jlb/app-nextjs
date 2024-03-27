@@ -2,11 +2,12 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    position: fixed;
+    position: sticky;
     height: var(--header-height);
     z-index: 1;
     left: 0;
     right: 0;
+    top: 0;
     background-color: var(--background-main-white);
 
 
